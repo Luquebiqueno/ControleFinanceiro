@@ -1,0 +1,9 @@
+C:\Users\luquebiqueno.pires\Documents\Luquebiqueno\Projetos\ControleFinanceiro\Infrastructure\ControleFinanceiro.DataBase\bin\Debug\netcoreapp3.1\ControleFinanceiro.DataBase.deps.json
+C:\Users\luquebiqueno.pires\Documents\Luquebiqueno\Projetos\ControleFinanceiro\Infrastructure\ControleFinanceiro.DataBase\bin\Debug\netcoreapp3.1\ControleFinanceiro.DataBase.dll
+C:\Users\luquebiqueno.pires\Documents\Luquebiqueno\Projetos\ControleFinanceiro\Infrastructure\ControleFinanceiro.DataBase\bin\Debug\netcoreapp3.1\ControleFinanceiro.DataBase.pdb
+C:\Users\luquebiqueno.pires\Documents\Luquebiqueno\Projetos\ControleFinanceiro\Infrastructure\ControleFinanceiro.DataBase\obj\Debug\netcoreapp3.1\ControleFinanceiro.DataBase.csprojAssemblyReference.cache
+C:\Users\luquebiqueno.pires\Documents\Luquebiqueno\Projetos\ControleFinanceiro\Infrastructure\ControleFinanceiro.DataBase\obj\Debug\netcoreapp3.1\ControleFinanceiro.DataBase.AssemblyInfoInputs.cache
+C:\Users\luquebiqueno.pires\Documents\Luquebiqueno\Projetos\ControleFinanceiro\Infrastructure\ControleFinanceiro.DataBase\obj\Debug\netcoreapp3.1\ControleFinanceiro.DataBase.AssemblyInfo.cs
+C:\Users\luquebiqueno.pires\Documents\Luquebiqueno\Projetos\ControleFinanceiro\Infrastructure\ControleFinanceiro.DataBase\obj\Debug\netcoreapp3.1\ControleFinanceiro.DataBase.csproj.CoreCompileInputs.cache
+C:\Users\luquebiqueno.pires\Documents\Luquebiqueno\Projetos\ControleFinanceiro\Infrastructure\ControleFinanceiro.DataBase\obj\Debug\netcoreapp3.1\ControleFinanceiro.DataBase.dll
+C:\Users\luquebiqueno.pires\Documents\Luquebiqueno\Projetos\ControleFinanceiro\Infrastructure\ControleFinanceiro.DataBase\obj\Debug\netcoreapp3.1\ControleFinanceiro.DataBase.pdb

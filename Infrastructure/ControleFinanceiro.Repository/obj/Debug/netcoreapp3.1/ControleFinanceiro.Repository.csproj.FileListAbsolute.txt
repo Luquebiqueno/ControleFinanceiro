@@ -1,0 +1,5 @@
+C:\Users\luquebiqueno.pires\Documents\Luquebiqueno\Projetos\ControleFinanceiro\Infrastructure\ControleFinanceiro.Repository\bin\Debug\netcoreapp3.1\ControleFinanceiro.Repository.deps.json
+C:\Users\luquebiqueno.pires\Documents\Luquebiqueno\Projetos\ControleFinanceiro\Infrastructure\ControleFinanceiro.Repository\bin\Debug\netcoreapp3.1\ControleFinanceiro.Repository.dll
+C:\Users\luquebiqueno.pires\Documents\Luquebiqueno\Projetos\ControleFinanceiro\Infrastructure\ControleFinanceiro.Repository\obj\Debug\netcoreapp3.1\ControleFinanceiro.Repository.csprojAssemblyReference.cache
+C:\Users\luquebiqueno.pires\Documents\Luquebiqueno\Projetos\ControleFinanceiro\Infrastructure\ControleFinanceiro.Repository\obj\Debug\netcoreapp3.1\ControleFinanceiro.Repository.AssemblyInfoInputs.cache
+C:\Users\luquebiqueno.pires\Documents\Luquebiqueno\Projetos\ControleFinanceiro\Infrastructure\ControleFinanceiro.Repository\obj\Debug\netcoreapp3.1\ControleFinanceiro.Repository.AssemblyInfo.cs

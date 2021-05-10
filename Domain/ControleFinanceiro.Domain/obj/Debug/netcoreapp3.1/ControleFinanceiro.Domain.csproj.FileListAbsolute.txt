@@ -1,0 +1,8 @@
+C:\Users\luquebiqueno.pires\Documents\Luquebiqueno\Projetos\ControleFinanceiro\Domain\ControleFinanceiro.Domain\bin\Debug\netcoreapp3.1\ControleFinanceiro.Domain.deps.json
+C:\Users\luquebiqueno.pires\Documents\Luquebiqueno\Projetos\ControleFinanceiro\Domain\ControleFinanceiro.Domain\bin\Debug\netcoreapp3.1\ControleFinanceiro.Domain.dll
+C:\Users\luquebiqueno.pires\Documents\Luquebiqueno\Projetos\ControleFinanceiro\Domain\ControleFinanceiro.Domain\bin\Debug\netcoreapp3.1\Generics.dll
+C:\Users\luquebiqueno.pires\Documents\Luquebiqueno\Projetos\ControleFinanceiro\Domain\ControleFinanceiro.Domain\bin\Debug\netcoreapp3.1\Generics.pdb
+C:\Users\luquebiqueno.pires\Documents\Luquebiqueno\Projetos\ControleFinanceiro\Domain\ControleFinanceiro.Domain\obj\Debug\netcoreapp3.1\ControleFinanceiro.Domain.csprojAssemblyReference.cache
+C:\Users\luquebiqueno.pires\Documents\Luquebiqueno\Projetos\ControleFinanceiro\Domain\ControleFinanceiro.Domain\obj\Debug\netcoreapp3.1\ControleFinanceiro.Domain.AssemblyInfoInputs.cache
+C:\Users\luquebiqueno.pires\Documents\Luquebiqueno\Projetos\ControleFinanceiro\Domain\ControleFinanceiro.Domain\obj\Debug\netcoreapp3.1\ControleFinanceiro.Domain.AssemblyInfo.cs
+C:\Users\luquebiqueno.pires\Documents\Luquebiqueno\Projetos\ControleFinanceiro\Domain\ControleFinanceiro.Domain\obj\Debug\netcoreapp3.1\ControleFinanceiro.Domain.csproj.CopyComplete

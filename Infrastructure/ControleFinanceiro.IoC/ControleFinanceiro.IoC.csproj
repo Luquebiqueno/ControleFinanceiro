@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Application\ControleFinanceiro.Application\ControleFinanceiro.Application.csproj" />
+    <ProjectReference Include="..\ControleFinanceiro.Repository\ControleFinanceiro.Repository.csproj" />
+  </ItemGroup>
+
+</Project>

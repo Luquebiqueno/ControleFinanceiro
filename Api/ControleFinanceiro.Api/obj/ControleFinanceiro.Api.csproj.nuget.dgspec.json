@@ -1,0 +1,420 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\luquebiqueno.pires\\Documents\\Luquebiqueno\\Projetos\\ControleFinanceiro\\Api\\ControleFinanceiro.Api\\ControleFinanceiro.Api.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\luquebiqueno.pires\\Documents\\Luquebiqueno\\Projetos\\ControleFinanceiro\\Api\\ControleFinanceiro.Api\\ControleFinanceiro.Api.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\luquebiqueno.pires\\Documents\\Luquebiqueno\\Projetos\\ControleFinanceiro\\Api\\ControleFinanceiro.Api\\ControleFinanceiro.Api.csproj",
+        "projectName": "ControleFinanceiro.Api",
+        "projectPath": "C:\\Users\\luquebiqueno.pires\\Documents\\Luquebiqueno\\Projetos\\ControleFinanceiro\\Api\\ControleFinanceiro.Api\\ControleFinanceiro.Api.csproj",
+        "packagesPath": "C:\\Users\\luquebiqueno.pires\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\luquebiqueno.pires\\Documents\\Luquebiqueno\\Projetos\\ControleFinanceiro\\Api\\ControleFinanceiro.Api\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\luquebiqueno.pires\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {
+              "C:\\Users\\luquebiqueno.pires\\Documents\\Luquebiqueno\\Projetos\\ControleFinanceiro\\Infrastructure\\ControleFinanceiro.IoC\\ControleFinanceiro.IoC.csproj": {
+                "projectPath": "C:\\Users\\luquebiqueno.pires\\Documents\\Luquebiqueno\\Projetos\\ControleFinanceiro\\Infrastructure\\ControleFinanceiro.IoC\\ControleFinanceiro.IoC.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[8.1.1, )"
+            },
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[3.1.14, )"
+            },
+            "Microsoft.AspNetCore.Mvc.NewtonsoftJson": {
+              "target": "Package",
+              "version": "[3.1.14, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.302\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\luquebiqueno.pires\\Documents\\Luquebiqueno\\Projetos\\ControleFinanceiro\\Application\\ControleFinanceiro.Application\\ControleFinanceiro.Application.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\luquebiqueno.pires\\Documents\\Luquebiqueno\\Projetos\\ControleFinanceiro\\Application\\ControleFinanceiro.Application\\ControleFinanceiro.Application.csproj",
+        "projectName": "ControleFinanceiro.Application",
+        "projectPath": "C:\\Users\\luquebiqueno.pires\\Documents\\Luquebiqueno\\Projetos\\ControleFinanceiro\\Application\\ControleFinanceiro.Application\\ControleFinanceiro.Application.csproj",
+        "packagesPath": "C:\\Users\\luquebiqueno.pires\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\luquebiqueno.pires\\Documents\\Luquebiqueno\\Projetos\\ControleFinanceiro\\Application\\ControleFinanceiro.Application\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\luquebiqueno.pires\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {
+              "C:\\Users\\luquebiqueno.pires\\Documents\\Luquebiqueno\\Projetos\\ControleFinanceiro\\Domain\\ControleFinanceiro.Domain\\ControleFinanceiro.Domain.csproj": {
+                "projectPath": "C:\\Users\\luquebiqueno.pires\\Documents\\Luquebiqueno\\Projetos\\ControleFinanceiro\\Domain\\ControleFinanceiro.Domain\\ControleFinanceiro.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.302\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\luquebiqueno.pires\\Documents\\Luquebiqueno\\Projetos\\ControleFinanceiro\\Domain\\ControleFinanceiro.Domain\\ControleFinanceiro.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\luquebiqueno.pires\\Documents\\Luquebiqueno\\Projetos\\ControleFinanceiro\\Domain\\ControleFinanceiro.Domain\\ControleFinanceiro.Domain.csproj",
+        "projectName": "ControleFinanceiro.Domain",
+        "projectPath": "C:\\Users\\luquebiqueno.pires\\Documents\\Luquebiqueno\\Projetos\\ControleFinanceiro\\Domain\\ControleFinanceiro.Domain\\ControleFinanceiro.Domain.csproj",
+        "packagesPath": "C:\\Users\\luquebiqueno.pires\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\luquebiqueno.pires\\Documents\\Luquebiqueno\\Projetos\\ControleFinanceiro\\Domain\\ControleFinanceiro.Domain\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\luquebiqueno.pires\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {
+              "C:\\Users\\luquebiqueno.pires\\Documents\\Luquebiqueno\\Projetos\\ControleFinanceiro\\Infrastructure\\Generics\\Generics.csproj": {
+                "projectPath": "C:\\Users\\luquebiqueno.pires\\Documents\\Luquebiqueno\\Projetos\\ControleFinanceiro\\Infrastructure\\Generics\\Generics.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "Microsoft.AspNetCore.Http.Abstractions": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.IdentityModel.Tokens": {
+              "target": "Package",
+              "version": "[6.11.0, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[6.11.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.302\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\luquebiqueno.pires\\Documents\\Luquebiqueno\\Projetos\\ControleFinanceiro\\Infrastructure\\ControleFinanceiro.IoC\\ControleFinanceiro.IoC.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\luquebiqueno.pires\\Documents\\Luquebiqueno\\Projetos\\ControleFinanceiro\\Infrastructure\\ControleFinanceiro.IoC\\ControleFinanceiro.IoC.csproj",
+        "projectName": "ControleFinanceiro.IoC",
+        "projectPath": "C:\\Users\\luquebiqueno.pires\\Documents\\Luquebiqueno\\Projetos\\ControleFinanceiro\\Infrastructure\\ControleFinanceiro.IoC\\ControleFinanceiro.IoC.csproj",
+        "packagesPath": "C:\\Users\\luquebiqueno.pires\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\luquebiqueno.pires\\Documents\\Luquebiqueno\\Projetos\\ControleFinanceiro\\Infrastructure\\ControleFinanceiro.IoC\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\luquebiqueno.pires\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {
+              "C:\\Users\\luquebiqueno.pires\\Documents\\Luquebiqueno\\Projetos\\ControleFinanceiro\\Application\\ControleFinanceiro.Application\\ControleFinanceiro.Application.csproj": {
+                "projectPath": "C:\\Users\\luquebiqueno.pires\\Documents\\Luquebiqueno\\Projetos\\ControleFinanceiro\\Application\\ControleFinanceiro.Application\\ControleFinanceiro.Application.csproj"
+              },
+              "C:\\Users\\luquebiqueno.pires\\Documents\\Luquebiqueno\\Projetos\\ControleFinanceiro\\Infrastructure\\ControleFinanceiro.Repository\\ControleFinanceiro.Repository.csproj": {
+                "projectPath": "C:\\Users\\luquebiqueno.pires\\Documents\\Luquebiqueno\\Projetos\\ControleFinanceiro\\Infrastructure\\ControleFinanceiro.Repository\\ControleFinanceiro.Repository.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.302\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\luquebiqueno.pires\\Documents\\Luquebiqueno\\Projetos\\ControleFinanceiro\\Infrastructure\\ControleFinanceiro.Repository\\ControleFinanceiro.Repository.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\luquebiqueno.pires\\Documents\\Luquebiqueno\\Projetos\\ControleFinanceiro\\Infrastructure\\ControleFinanceiro.Repository\\ControleFinanceiro.Repository.csproj",
+        "projectName": "ControleFinanceiro.Repository",
+        "projectPath": "C:\\Users\\luquebiqueno.pires\\Documents\\Luquebiqueno\\Projetos\\ControleFinanceiro\\Infrastructure\\ControleFinanceiro.Repository\\ControleFinanceiro.Repository.csproj",
+        "packagesPath": "C:\\Users\\luquebiqueno.pires\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\luquebiqueno.pires\\Documents\\Luquebiqueno\\Projetos\\ControleFinanceiro\\Infrastructure\\ControleFinanceiro.Repository\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\luquebiqueno.pires\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {
+              "C:\\Users\\luquebiqueno.pires\\Documents\\Luquebiqueno\\Projetos\\ControleFinanceiro\\Domain\\ControleFinanceiro.Domain\\ControleFinanceiro.Domain.csproj": {
+                "projectPath": "C:\\Users\\luquebiqueno.pires\\Documents\\Luquebiqueno\\Projetos\\ControleFinanceiro\\Domain\\ControleFinanceiro.Domain\\ControleFinanceiro.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[3.1.14, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.302\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\luquebiqueno.pires\\Documents\\Luquebiqueno\\Projetos\\ControleFinanceiro\\Infrastructure\\Generics\\Generics.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\luquebiqueno.pires\\Documents\\Luquebiqueno\\Projetos\\ControleFinanceiro\\Infrastructure\\Generics\\Generics.csproj",
+        "projectName": "Generics",
+        "projectPath": "C:\\Users\\luquebiqueno.pires\\Documents\\Luquebiqueno\\Projetos\\ControleFinanceiro\\Infrastructure\\Generics\\Generics.csproj",
+        "packagesPath": "C:\\Users\\luquebiqueno.pires\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\luquebiqueno.pires\\Documents\\Luquebiqueno\\Projetos\\ControleFinanceiro\\Infrastructure\\Generics\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\luquebiqueno.pires\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.7, )"
+            },
+            "Microsoft.Extensions.DependencyInjection": {
+              "target": "Package",
+              "version": "[3.1.7, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.302\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
