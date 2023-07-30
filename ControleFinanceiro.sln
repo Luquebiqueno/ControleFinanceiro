@@ -1,0 +1,61 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Api", "Api", "{13BA766A-8DAB-47A4-AC81-F395B6EA6612}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ControleFinanceiro.Api", "Api\ControleFinanceiro.Api\ControleFinanceiro.Api.csproj", "{B5C5809C-9556-418C-A4C0-C8470F8A6C66}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application", "{2B0E6B83-1F2D-459D-AEA2-4BEE815A69F2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ControleFinanceiro.Application", "Application\ControleFinanceiro.Application\ControleFinanceiro.Application.csproj", "{8597C1B7-4E32-4259-983E-2BBB228F9923}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{DDF37DE3-2697-48AA-9083-5FFEFFD906A5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ControleFinanceiro.Domain", "Domain\ControleFinanceiro.Domain\ControleFinanceiro.Domain.csproj", "{44D4386C-D1FF-40F5-A0E4-1EA09A436CD3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{399D9166-35E0-4C82-B668-3AAACB6C05DE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ControleFinanceiro.Repository", "Infrastructure\ControleFinanceiro.Repository\ControleFinanceiro.Repository.csproj", "{BAC720E2-7C07-4021-82F9-FF05BF6951C8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ControleFinanceiro.DataBase", "Infrastructure\ControleFinanceiro.DataBase\ControleFinanceiro.DataBase.csproj", "{7467A081-E560-474F-B55A-C829504F72E2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B5C5809C-9556-418C-A4C0-C8470F8A6C66}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5C5809C-9556-418C-A4C0-C8470F8A6C66}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5C5809C-9556-418C-A4C0-C8470F8A6C66}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5C5809C-9556-418C-A4C0-C8470F8A6C66}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8597C1B7-4E32-4259-983E-2BBB228F9923}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8597C1B7-4E32-4259-983E-2BBB228F9923}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8597C1B7-4E32-4259-983E-2BBB228F9923}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8597C1B7-4E32-4259-983E-2BBB228F9923}.Release|Any CPU.Build.0 = Release|Any CPU
+		{44D4386C-D1FF-40F5-A0E4-1EA09A436CD3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44D4386C-D1FF-40F5-A0E4-1EA09A436CD3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{44D4386C-D1FF-40F5-A0E4-1EA09A436CD3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{44D4386C-D1FF-40F5-A0E4-1EA09A436CD3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BAC720E2-7C07-4021-82F9-FF05BF6951C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BAC720E2-7C07-4021-82F9-FF05BF6951C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BAC720E2-7C07-4021-82F9-FF05BF6951C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BAC720E2-7C07-4021-82F9-FF05BF6951C8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7467A081-E560-474F-B55A-C829504F72E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7467A081-E560-474F-B55A-C829504F72E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7467A081-E560-474F-B55A-C829504F72E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7467A081-E560-474F-B55A-C829504F72E2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B5C5809C-9556-418C-A4C0-C8470F8A6C66} = {13BA766A-8DAB-47A4-AC81-F395B6EA6612}
+		{8597C1B7-4E32-4259-983E-2BBB228F9923} = {2B0E6B83-1F2D-459D-AEA2-4BEE815A69F2}
+		{44D4386C-D1FF-40F5-A0E4-1EA09A436CD3} = {DDF37DE3-2697-48AA-9083-5FFEFFD906A5}
+		{BAC720E2-7C07-4021-82F9-FF05BF6951C8} = {399D9166-35E0-4C82-B668-3AAACB6C05DE}
+		{7467A081-E560-474F-B55A-C829504F72E2} = {399D9166-35E0-4C82-B668-3AAACB6C05DE}
+	EndGlobalSection
+EndGlobal
