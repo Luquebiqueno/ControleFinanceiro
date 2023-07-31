@@ -16,10 +16,10 @@ namespace ControleFinanceiro.Repository.Repositories
     {
         public UsuarioRepository(IUnitOfWork<TContext> unitOfWork) : base(unitOfWork) { }
 
-        public override async Task<IEnumerable<Usuario>> GetAllAsync()
-        {
-            return await _dbSet.Where(x => x.Ativo).ToListAsync();
-        }
+        public override async Task<IEnumerable<Usuario>> GetAllAsync() => await _dbSet.Where(x => x.Ativo).ToListAsync();
+
+        public override async Task<Usuario> GetByIdAsync(int id) => await _dbSet.FirstOrDefaultAsync(x => x.Id == id && x.Ativo); 
+        
         public Usuario UpdateUsuario(Usuario entity)
         {
             try
