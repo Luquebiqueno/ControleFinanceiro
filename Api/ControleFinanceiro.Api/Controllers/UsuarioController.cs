@@ -1,4 +1,6 @@
-﻿using ControleFinanceiro.Api.Models;
+﻿using AutoMapper;
+using ControleFinanceiro.Api.Models;
+using ControleFinanceiro.Domain.Dto;
 using ControleFinanceiro.Domain.Interfaces.Application;
 using ControleFinanceiro.Repository.Context;
 using Microsoft.AspNetCore.Authorization;
@@ -14,14 +16,16 @@ namespace ControleFinanceiro.Api.Controllers
         #region [ Propriedades ]
 
         private readonly IUsuarioApplication<ControleFinanceiroContext> _application;
+        private readonly IMapper _mapper;
 
         #endregion
 
         #region [ Contrutores ]
 
-        public UsuarioController(IUsuarioApplication<ControleFinanceiroContext> application)
+        public UsuarioController(IUsuarioApplication<ControleFinanceiroContext> application, IMapper mapper)
         {
             _application = application;
+            _mapper = mapper;
         }
 
         #endregion
@@ -29,12 +33,14 @@ namespace ControleFinanceiro.Api.Controllers
         #region [ Métodos ]
 
         [HttpGet]
-        //[Authorize("Bearer")]
-        public async Task<IActionResult> GetUsuario() => Ok(await _application.GetAllAsync());
+        [Authorize("Bearer")]
+        public async Task<IActionResult> GetUsuario() 
+            => Ok(_mapper.Map<IEnumerable<UsuarioDto>>(await _application.GetAllAsync()));
+        
 
         [HttpGet]
         [Route("{id}")]
-        //[Authorize("Bearer")]
+        [Authorize("Bearer")]
         public async Task<IActionResult> GetUsuarioById(int id)
         {
             if (!ModelState.IsValid)
@@ -44,11 +50,11 @@ namespace ControleFinanceiro.Api.Controllers
             if (usuario == null)
                 return NotFound();
 
-            return Ok(usuario);
+            return Ok(_mapper.Map<UsuarioDto>(usuario));
         }
 
         [HttpPost]
-        //[AllowAnonymous]
+        [AllowAnonymous]
         public async Task<IActionResult> CreateUsuario([FromBody] UsuarioViewModel model)
         {
             if (!ModelState.IsValid)
@@ -66,7 +72,7 @@ namespace ControleFinanceiro.Api.Controllers
 
         [HttpPut]
         [Route("{id}")]
-        //[Authorize("Bearer")]
+        [Authorize("Bearer")]
         public async Task<IActionResult> UpdateUsuario([FromRoute] int id, [FromBody] UsuarioViewModel model)
         {
             if (!ModelState.IsValid)
@@ -81,7 +87,7 @@ namespace ControleFinanceiro.Api.Controllers
 
         [HttpPut]
         [Route("DeleteUsuario")]
-        //[Authorize("Bearer")]
+        [Authorize("Bearer")]
         public async Task<IActionResult> DeleteUsuario()
         {
             await _application.DeleteUsuario();
@@ -90,7 +96,7 @@ namespace ControleFinanceiro.Api.Controllers
 
         [HttpPut]
         [Route("AlterarSenha")]
-        //[Authorize("Bearer")]
+        [Authorize("Bearer")]
         public async Task<IActionResult> AlterarSenha(AlterarSenhaViewModel model)
         {
             await _application.AlterarSenha(model.Senha);

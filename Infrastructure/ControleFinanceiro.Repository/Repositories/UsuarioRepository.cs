@@ -5,6 +5,7 @@ using ControleFinanceiro.Domain.Interfaces.Repository;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,10 +17,12 @@ namespace ControleFinanceiro.Repository.Repositories
     {
         public UsuarioRepository(IUnitOfWork<TContext> unitOfWork) : base(unitOfWork) { }
 
-        public override async Task<IEnumerable<Usuario>> GetAllAsync() => await _dbSet.Where(x => x.Ativo).ToListAsync();
-
-        public override async Task<Usuario> GetByIdAsync(int id) => await _dbSet.FirstOrDefaultAsync(x => x.Id == id && x.Ativo); 
-        
+        public override async Task<IEnumerable<Usuario>> GetAllAsync() 
+            => await _dbSet.Where(x => x.Ativo).ToListAsync();
+        public override async Task<Usuario> GetByIdAsync(int id) 
+            => await _dbSet.FirstOrDefaultAsync(x => x.Id == id && x.Ativo);
+        public async Task<Usuario> GetUsuarioByLoginSenha(string login, string senha)
+            => await _dbSet.FirstOrDefaultAsync(x => x.Email.Equals(login) && x.Senha.Equals(senha) && x.Ativo);
         public Usuario UpdateUsuario(Usuario entity)
         {
             try

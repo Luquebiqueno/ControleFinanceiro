@@ -12,5 +12,6 @@ namespace ControleFinanceiro.Domain.Interfaces.Repository
                                    where TContext : IUnitOfWork<TContext>
     {
         Usuario UpdateUsuario(Usuario entity);
+        Task<Usuario> GetUsuarioByLoginSenha(string login, string senha);
     }
 }

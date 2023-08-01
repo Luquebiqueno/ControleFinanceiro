@@ -38,7 +38,8 @@ namespace ControleFinanceiro.Domain.Services
 
             return await base.CreateAsync(entity);
         }
-
+        public async Task<Usuario> GetUsuarioByLoginSenha(string login, string senha) 
+            => await _repository.GetUsuarioByLoginSenha(login, senha);
         public async Task DeleteUsuario()
         {
             var usuario = await _repository.GetByIdAsync(1);
@@ -49,7 +50,6 @@ namespace ControleFinanceiro.Domain.Services
 
             _repository.UpdateUsuario(usuario);
         }
-
         public async Task AlterarSenha(string senha)
         {
             var usuario = await _repository.GetByIdAsync(1);
@@ -60,7 +60,6 @@ namespace ControleFinanceiro.Domain.Services
 
             _repository.UpdateUsuario(usuario);
         }
-
         public async Task<Usuario> UpdateUsuario(int id, Usuario entity)
         {
             await ValidarEmail(entity.Email, id);
@@ -76,7 +75,6 @@ namespace ControleFinanceiro.Domain.Services
 
             return _repository.UpdateUsuario(usuario);
         }
-
         private async Task ValidarEmail(string email, int id)
         {
             var usuario = await GetAllAsync();
