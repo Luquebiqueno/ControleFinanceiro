@@ -1,0 +1,31 @@
+<mat-list>
+    <ng-container *ngFor="let menu of menuList">
+        <ng-container [ngTemplateOutlet]="menu.children ?  childMenu : parentMenu"
+            [ngTemplateOutletContext]="{menu:menu}">
+        </ng-container>
+    </ng-container>
+    <ng-template #parentMenu let-menu="menu">
+        <mat-list-item>
+            <a href="javascript:void(0)" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                <mat-icon class="material-icons-outlined">{{menu.icone}}</mat-icon>
+                <span class="link-name">{{menu.descricao}}</span>
+            </a>
+        </mat-list-item>
+    </ng-template>
+    <ng-template #childMenu let-menu="menu">
+        <mat-expansion-panel [class.mat-elevation-z0]="true">
+            <mat-expansion-panel-header>
+                <a href="javascript:void(0)">
+                    <mat-icon class="material-icons-outlined">{{menu.icone}}</mat-icon>
+                    <span class="link-name">{{menu.descricao}}</span>
+                </a>
+            </mat-expansion-panel-header>
+            <mat-list-item *ngFor="let submenu of menu.children">
+                <a href="javascript:void(0)" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                    <mat-icon class="material-icons-outlined">{{submenu.icone}}</mat-icon>
+                    <span class="link-name">{{submenu.descricao}}</span>
+                </a>
+            </mat-list-item>
+        </mat-expansion-panel>
+    </ng-template>
+</mat-list>

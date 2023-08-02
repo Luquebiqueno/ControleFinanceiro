@@ -1,0 +1,47 @@
+mat-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    mat-list-item {
+        a {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            position: relative;
+            .link-name {
+                font-size: 14px;
+                font-weight: 400;
+                color: #707070;
+            }
+        }
+
+        a:hover:before {
+            content: "";
+            position: absolute;
+            left: -7px;
+            height: 5px;
+            width: 5px;
+            border-radius: 50%;
+            background-color: #0e4bf1;
+        }
+
+        a:hover {
+            .link-name {
+                color: #0e4bf1;
+            }
+        }
+    }
+}
+
+.button-sair-content {
+    text-align: center;
+    padding: 8px 0 16px 0;
+    width: 100%;
+
+    .button-sair {
+        border: 1px solid;
+        color: #536dfe;
+        width: 80%;
+    }
+}

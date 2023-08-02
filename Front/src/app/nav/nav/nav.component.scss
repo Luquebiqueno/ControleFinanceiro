@@ -1,0 +1,49 @@
+.sidebar-container {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    .sidenav-container {
+        flex: 1;
+        .sidenav {
+            width: 220px;
+        }
+    }
+    mat-toolbar {
+        height: 60px;
+        display: flex;
+        align-items: center;
+        background-color: #1976d2;
+        color: white;
+        font-weight: 600;
+        mat-icon { 
+            margin-right: 5px;
+        }
+        .header {
+            display: flex; 
+            flex: 1; 
+            justify-content: flex-end;
+        }
+    }
+
+    footer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        background-color: #fff;
+        height: 30px;
+        width: 100%;
+        bottom: 0;
+        box-shadow: none;
+        border-top-color: rgba(0, 0, 0, 0.12);;
+        border-top-width: 1px;
+        border-top-style: solid;
+        p {
+            font-size: 10px;
+        }
+    }
+}
