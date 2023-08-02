@@ -2,6 +2,7 @@
 using ControleFinanceiro.Common.Domain.Interfaces;
 using ControleFinanceiro.Common.Domain.Service;
 using ControleFinanceiro.Domain.Entities;
+using ControleFinanceiro.Domain.Helpers;
 using ControleFinanceiro.Domain.Interfaces.Repository;
 using ControleFinanceiro.Domain.Interfaces.Service;
 using System;
@@ -18,14 +19,17 @@ namespace ControleFinanceiro.Domain.Services
         #region [ Propriedades ]
 
         private new readonly IUsuarioRepository<TContext> _repository;
+        private readonly IUsuarioLogado _usuarioLogado;
 
         #endregion
 
         #region [ Construtor ]
 
-        public UsuarioService(IUsuarioRepository<TContext> repository) : base(repository)
+        public UsuarioService(IUsuarioRepository<TContext> repository,
+                              IUsuarioLogado usuarioLogado) : base(repository)
         {
             _repository = repository;
+            _usuarioLogado = usuarioLogado;
         }
 
         #endregion
@@ -42,21 +46,19 @@ namespace ControleFinanceiro.Domain.Services
             => await _repository.GetUsuarioByLoginSenha(login, senha);
         public async Task DeleteUsuario()
         {
-            var usuario = await _repository.GetByIdAsync(1);
+            var usuario = await _repository.GetByIdAsync(_usuarioLogado.Usuario.Id);
 
             usuario.Inativar();
             usuario.AtualizarDataAlteracao();
-            usuario.AtualizarUsuarioAlteracao(1);
 
             _repository.UpdateUsuario(usuario);
         }
         public async Task AlterarSenha(string senha)
         {
-            var usuario = await _repository.GetByIdAsync(1);
+            var usuario = await _repository.GetByIdAsync(_usuarioLogado.Usuario.Id);
 
             usuario.AtualizarSenha(senha);
             usuario.AtualizarDataAlteracao();
-            usuario.AtualizarUsuarioAlteracao(1);
 
             _repository.UpdateUsuario(usuario);
         }

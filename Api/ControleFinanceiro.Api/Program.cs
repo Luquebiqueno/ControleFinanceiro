@@ -4,6 +4,7 @@ using ControleFinanceiro.Common.Domain.Interfaces;
 using ControleFinanceiro.Common.Domain.Service;
 using ControleFinanceiro.Common.Domain.Token;
 using ControleFinanceiro.Common.Infrastructure.Repository;
+using ControleFinanceiro.Domain.Helpers;
 using ControleFinanceiro.Domain.Interfaces.Application;
 using ControleFinanceiro.Domain.Interfaces.Repository;
 using ControleFinanceiro.Domain.Interfaces.Service;
@@ -25,8 +26,11 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 builder.Services.AddDbContext<ControleFinanceiroContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")).EnableDetailedErrors());
 builder.Services.AddScoped<IUnitOfWork<ControleFinanceiroContext>, ControleFinanceiroContext>();
+builder.Services.AddScoped<IUsuarioLogado, UsuarioLogado>();
+builder.Services.AddScoped<IUsuarioLogadoRepository, UsuarioLogadoRepository>();
 builder.Services.AddTransient<ITokenService, TokenService>();
 builder.Services.AddAutoMapper(typeof(Program));
 
