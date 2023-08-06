@@ -16,16 +16,6 @@ mat-list {
             }
         }
 
-        a:hover:before {
-            content: "";
-            position: absolute;
-            left: -7px;
-            height: 5px;
-            width: 5px;
-            border-radius: 50%;
-            background-color: #0e4bf1;
-        }
-
         a:hover {
             .link-name {
                 color: #0e4bf1;

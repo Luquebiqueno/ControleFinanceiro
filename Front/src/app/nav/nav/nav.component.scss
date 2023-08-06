@@ -6,12 +6,15 @@
     bottom: 0;
     right: 0;
     left: 0;
+
     .sidenav-container {
         flex: 1;
+
         .sidenav {
             width: 220px;
         }
     }
+
     mat-toolbar {
         height: 60px;
         display: flex;
@@ -19,14 +22,20 @@
         background-color: #1976d2;
         color: white;
         font-weight: 600;
-        mat-icon { 
+
+        mat-icon {
             margin-right: 5px;
         }
+
         .header {
-            display: flex; 
-            flex: 1; 
+            display: flex;
+            flex: 1;
             justify-content: flex-end;
         }
+    }
+
+    .content {
+        margin: 20px;
     }
 
     footer {
@@ -39,9 +48,11 @@
         width: 100%;
         bottom: 0;
         box-shadow: none;
-        border-top-color: rgba(0, 0, 0, 0.12);;
+        border-top-color: rgba(0, 0, 0, 0.12);
+        ;
         border-top-width: 1px;
         border-top-style: solid;
+
         p {
             font-size: 10px;
         }

@@ -1,0 +1,51 @@
+.container {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #e9ebee;
+    mat-card {
+        width: 430px;
+        mat-card-title {
+            margin-bottom: 20px;
+            font-size: 25px;
+            font-weight: 600;
+        }
+        mat-form-field {
+            width: 100%;
+        }
+        .text {
+            color: #333;
+            font-size: 14px;
+        }
+        a.text {
+            color: #4070f4;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .btn-div {
+            position: relative;
+            width: 100%;
+            margin-top: 10px;
+            button {
+                border: none;
+                color: #fff;
+                font-size: 20px;
+                font-weight: 500;
+                width: 100%;
+                background-color: #4070f4;
+                cursor: pointer;
+                transition: all 0.3s ease;
+            }
+            button:hover {
+                background-color: #265df2;
+            }
+        }
+        .login-signup {
+            margin-top: 20px;
+            text-align: center;
+        }
+    }
+}

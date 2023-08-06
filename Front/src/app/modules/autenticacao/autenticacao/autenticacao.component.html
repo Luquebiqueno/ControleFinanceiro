@@ -1,0 +1,6 @@
+<div *ngIf="cadastro, else formLogin">
+    <app-cadastro (exibirPainel)="exibirPainel($event)"></app-cadastro>
+</div>
+<ng-template #formLogin>
+    <app-login (exibirPainel)="exibirPainel($event)"></app-login>
+</ng-template>
