@@ -19,7 +19,7 @@ export class CadastroComponent implements OnInit {
     @Output() exibirPainel: EventEmitter<string> = new EventEmitter<string>();
 
     constructor(private usuarioService: UsuarioService,
-        private fb: FormBuilder) { }
+                private fb: FormBuilder) { }
 
     ngOnInit(): void {
         this.getForm();

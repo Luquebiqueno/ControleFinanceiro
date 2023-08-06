@@ -24,12 +24,6 @@ import { EsqueciMinhaSenhaComponent } from './esqueci-minha-senha/esqueci-minha-
         ReactiveFormsModule,
         FormsModule,
         HttpClientModule
-    ],
-    exports: [
-        AutenticacaoComponent,
-        LoginComponent,
-        CadastroComponent,
-        EsqueciMinhaSenhaComponent
     ]
 })
 export class AutenticacaoModule { }

@@ -1,0 +1,25 @@
+mat-card-title {
+    margin-bottom: 20px;
+    font-size: 25px;
+    font-weight: 600;
+}
+.div-form {
+    width: 100%;
+    display: flex;
+    mat-form-field {
+        width: 50%;
+    }
+}
+mat-card-actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .btn-salvar{
+        background-color: #7cb342; 
+        min-width: 100px;
+        color: #fff;
+    } 
+    .btn-voltar{
+        min-width: 100px;
+    } 
+}

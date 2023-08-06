@@ -5,8 +5,10 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { NavModule } from './nav/nav.module';
 import { AutenticacaoModule } from './modules/autenticacao/autenticacao.module';
+import { MeuPerfilModule } from './modules/meu-perfil/meu-perfil.module';
 
 import { AppComponent } from './app.component';
+import { JwtInterceptor } from './_helpers/jwt.interceptor';
 
 @NgModule({
     declarations: [
@@ -16,10 +18,18 @@ import { AppComponent } from './app.component';
         BrowserModule,
         AppRoutingModule,
         BrowserAnimationsModule,
+        HttpClientModule,
         NavModule,
-        AutenticacaoModule
+        AutenticacaoModule,
+        MeuPerfilModule
     ],
-    providers: [],
+    providers: [
+        {
+            provide: HTTP_INTERCEPTORS,
+            useClass: JwtInterceptor,
+            multi: true
+        }
+    ],
     bootstrap: [AppComponent]
 })
 export class AppModule { }

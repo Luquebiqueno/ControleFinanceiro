@@ -44,6 +44,8 @@ namespace ControleFinanceiro.Domain.Services
         }
         public async Task<Usuario> GetUsuarioByLoginSenha(string login, string senha) 
             => await _repository.GetUsuarioByLoginSenha(login, senha);
+        public async Task<Usuario> GetUsuarioLogado() 
+            => await _repository.GetByIdAsync(_usuarioLogado.Usuario.Id);
         public async Task DeleteUsuario()
         {
             var usuario = await _repository.GetByIdAsync(_usuarioLogado.Usuario.Id);

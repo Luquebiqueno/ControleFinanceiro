@@ -53,6 +53,18 @@ namespace ControleFinanceiro.Api.Controllers
             return Ok(_mapper.Map<UsuarioDto>(usuario));
         }
 
+        [HttpGet]
+        [Route("UsuarioLogado")]
+        [Authorize("Bearer")]
+        public async Task<IActionResult> GetUsuarioLogado()
+        {
+            var usuario = await _application.GetUsuarioLogado();
+            if (usuario == null)
+                return NotFound();
+
+            return Ok(_mapper.Map<UsuarioDto>(usuario));
+        }
+
         [HttpPost]
         [AllowAnonymous]
         public async Task<IActionResult> CreateUsuario([FromBody] UsuarioViewModel model)

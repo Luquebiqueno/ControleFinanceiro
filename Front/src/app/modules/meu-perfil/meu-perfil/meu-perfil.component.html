@@ -1,0 +1,38 @@
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>Meu Perfil</mat-card-title>
+    </mat-card-header>
+    <form [formGroup]="meuPerfilForm">
+        <mat-card-content>
+            <div class="div-form">
+                <mat-form-field appearance="outline">
+                    <mat-label>Nome</mat-label>
+                    <input type="text" id="nome" formControlName="nome" matInput required>
+                    <mat-error *ngIf="meuPerfilForm.hasError('required', 'nome')">
+                        Digite o nome por favor.
+                    </mat-error>
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>E-mail</mat-label>
+                    <input type="email" id="email" formControlName="email" matInput required>
+                    <mat-error *ngIf="meuPerfilForm.hasError('required', 'email')">
+                        Digite o email por favor.
+                    </mat-error>
+                    <mat-error *ngIf="meuPerfilForm.hasError('email', 'email')">
+                        O email é inválido.
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <div class="div-form">
+                <mat-form-field appearance="outline">
+                    <mat-label>Telefone</mat-label>
+                    <input type="text" id="telefone" formControlName="telefone" matInput>
+                </mat-form-field>
+            </div>
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-raised-button class="btn-voltar" [routerLink]="['../dashboard']">Voltar</button>
+            <button mat-button class="btn-salvar" (click)="updateUsuario()">Salvar</button>
+        </mat-card-actions>
+    </form>
+</mat-card>

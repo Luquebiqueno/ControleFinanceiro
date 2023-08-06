@@ -31,6 +31,8 @@ namespace ControleFinanceiro.Application.ServiceApplications
 
         #region [ Métodos ]
 
+        public async Task<Usuario> GetUsuarioLogado() 
+            => await _service.GetUsuarioLogado();
         public async Task<Usuario> UpdateUsuario(int id, Usuario entity)
         {
             await _service.UpdateUsuario(id, entity);

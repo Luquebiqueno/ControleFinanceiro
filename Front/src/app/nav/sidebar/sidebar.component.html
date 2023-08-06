@@ -6,7 +6,7 @@
     </ng-container>
     <ng-template #parentMenu let-menu="menu">
         <mat-list-item>
-            <a href="javascript:void(0)" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+            <a href="javascript:void(0)" [routerLink]="menu.routerLink" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
                 <mat-icon class="material-icons-outlined">{{menu.icone}}</mat-icon>
                 <span class="link-name">{{menu.descricao}}</span>
             </a>
@@ -21,7 +21,7 @@
                 </a>
             </mat-expansion-panel-header>
             <mat-list-item *ngFor="let submenu of menu.children">
-                <a href="javascript:void(0)" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                <a href="javascript:void(0)" [routerLink]="submenu.routerLink" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
                     <mat-icon class="material-icons-outlined">{{submenu.icone}}</mat-icon>
                     <span class="link-name">{{submenu.descricao}}</span>
                 </a>

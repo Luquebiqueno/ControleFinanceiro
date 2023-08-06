@@ -14,5 +14,6 @@ namespace ControleFinanceiro.Domain.Interfaces.Application
         Task<Usuario> UpdateUsuario(int id, Usuario entity);
         Task DeleteUsuario();
         Task AlterarSenha(string senha);
+        Task<Usuario> GetUsuarioLogado();
     }
 }

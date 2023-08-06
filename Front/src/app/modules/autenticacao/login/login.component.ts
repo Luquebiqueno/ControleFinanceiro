@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
         this.validarFormulario();
     }
 
-    public validarFormulario(): void {
+    validarFormulario(): void {
         this.form = this.fb.group({
             email: ['', [Validators.required]],
             senha: ['', [Validators.required, Validators.minLength(8)]]
