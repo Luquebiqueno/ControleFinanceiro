@@ -3,28 +3,37 @@
         <mat-card-header>
             <mat-card-title>Login</mat-card-title>
         </mat-card-header>
-        <form>
+        <form [formGroup]="form">
             <mat-card-content>
                 <div>
                     <mat-form-field appearance="outline">
                         <mat-label>Email</mat-label>
-                        <input type="email" id="email" matInput>
+                        <input type="email" id="email" formControlName="email" matInput>
+                        <mat-error *ngIf="form.hasError('required', 'email')">
+                            Digite o email por favor.
+                        </mat-error>
+                        <mat-error *ngIf="form.hasError('email', 'email')">
+                            O email é inválido.
+                        </mat-error>
                     </mat-form-field>
                 </div>
                 <div>
                     <mat-form-field appearance="outline">
                         <mat-label>Senha</mat-label>
-                        <input [type]="hide ? 'password' : 'text'" id="senha" matInput>
-                        <!-- <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                        <input [type]="hide ? 'password' : 'text'" id="senha" formControlName="senha" matInput>
+                        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
                             <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-                        </button> -->
+                        </button>
+                        <mat-error *ngIf="form.hasError('required', 'senha')">
+                            Digite a senha por favor.
+                        </mat-error>
                     </mat-form-field>
                 </div>
                 <div class="checkbox-text">
                     <a href="#" class="text">Esqueceu a senha?</a>
                 </div>
                 <div class="btn-div">
-                    <button mat-flat-button type="submit" (click)="login()">Login</button>
+                    <button mat-flat-button type="submit" (click)="login()" [disabled]="form.invalid">Login</button>
                 </div>
                 <div class="login-signup">
                     <span class="text"> Ainda não tem uma conta?

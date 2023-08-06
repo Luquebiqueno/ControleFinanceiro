@@ -43,7 +43,20 @@ export class CadastroComponent implements OnInit {
     }
 
     createUsuario(): void {
-        alert('Cadastro');
+        if (this.form.invalid) {
+            alert('Dados inválidos');
+            return;
+        }
+
+        this.usuario = this.form.value;
+        this.usuarioService.createUsuario(this.usuario).subscribe((response: any) => {
+            alert('Usuário cadastrado com sucesso');
+            this.exibirPainelLogin();
+        },
+        error => {
+            alert('Aconteceu um erro');
+            return;
+        });
     }
 
     exibirPainelLogin(): void {
