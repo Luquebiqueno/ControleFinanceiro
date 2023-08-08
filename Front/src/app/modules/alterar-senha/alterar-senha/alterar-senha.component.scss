@@ -1,0 +1,17 @@
+mat-card-title {
+    font-size: 25px;
+    font-weight: 600;
+}
+mat-form-field {
+    width: 100%;
+}
+.div-btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .btn-salvar{
+        background-color: #7cb342; 
+        min-width: 100px;
+        color: #fff;
+    }
+}

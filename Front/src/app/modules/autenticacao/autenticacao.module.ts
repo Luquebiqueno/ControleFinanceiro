@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 import { MaterialModule } from 'src/app/material/material.module';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
@@ -20,6 +21,7 @@ import { EsqueciMinhaSenhaComponent } from './esqueci-minha-senha/esqueci-minha-
     ],
     imports: [
         CommonModule,
+        RouterModule,
         MaterialModule,
         ReactiveFormsModule,
         FormsModule,

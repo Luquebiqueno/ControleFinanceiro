@@ -1,1 +1,10 @@
-<p>excluir-minha-conta works!</p>
+<mat-card>
+    <h2 mat-dialog-title>Deseja realmente excluir a sua conta?</h2>
+    <mat-dialog-content>
+        Esta ação não poderá ser desfeita!
+        <div class="div-btn">
+            <button mat-raised-button mat-dialog-close>Fechar</button>
+            <button mat-raised-button class="btn-excluir" (click)="excluirConta()">Excluir</button>
+        </div>
+    </mat-dialog-content>
+</mat-card>

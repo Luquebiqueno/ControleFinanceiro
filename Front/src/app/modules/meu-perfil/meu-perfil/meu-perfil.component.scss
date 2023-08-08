@@ -1,16 +1,11 @@
 mat-card-title {
-    margin-bottom: 20px;
     font-size: 25px;
     font-weight: 600;
 }
-.div-form {
+mat-form-field {
     width: 100%;
-    display: flex;
-    mat-form-field {
-        width: 50%;
-    }
 }
-mat-card-actions {
+.div-btn {
     display: flex;
     align-items: center;
     justify-content: space-between;

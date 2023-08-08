@@ -55,4 +55,8 @@ export class LoginComponent implements OnInit {
     exibirPainelCadastro(): void {
         this.exibirPainel.emit('cadastro');
     }
+
+    esqueciMinhaSenha(): void {
+        this.router.navigate(['esqueci-minha-senha']);
+    }
 }

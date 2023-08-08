@@ -23,7 +23,7 @@ export class HeaderComponent implements OnInit {
     }
 
     alterarSenha(): void {
-        this.dialog.open(AlterarSenhaComponent);
+        this.router.navigate(['alterar-senha']);
     }
 
     excluirConta(): void {

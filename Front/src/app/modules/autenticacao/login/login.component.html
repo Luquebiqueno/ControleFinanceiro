@@ -30,7 +30,7 @@
                     </mat-form-field>
                 </div>
                 <div class="checkbox-text">
-                    <a href="#" class="text">Esqueceu a senha?</a>
+                    <a href="javascript:void(0)" class="text" (click)="esqueciMinhaSenha()">Esqueceu a senha?</a>
                 </div>
                 <div class="btn-div">
                     <button mat-flat-button type="submit" (click)="login()" [disabled]="form.invalid">Login</button>

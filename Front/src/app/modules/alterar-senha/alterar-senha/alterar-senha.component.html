@@ -1,1 +1,39 @@
-<p>alterar-senha works!</p>
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>Alterar Senha</mat-card-title>
+    </mat-card-header>
+    <form [formGroup]="formAlterarSenha">
+        <mat-card-content>
+            <mat-grid-list cols="2" rowHeight='100px' gutterSize="15px">
+                <mat-grid-tile>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Senha</mat-label>
+                        <input matInput [type]="hide ? 'password' : 'text'" formControlName="senha" minlength="8" required>
+                        <mat-error *ngIf="formAlterarSenha.hasError('required', 'senha')">
+                          Digite a senha por favor.
+                        </mat-error>
+                        <mat-error *ngIf="formAlterarSenha.hasError('minlength', 'senha')">
+                          A senha precisa ter no mínimo 8 caracteres.
+                        </mat-error>
+                    </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Confirmar Senha</mat-label>
+                        <input matInput [type]="hide ? 'password' : 'text'" formControlName="confirmarSenha" [errorStateMatcher]="matcher">
+                        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                        </button>
+                        <mat-error *ngIf="formAlterarSenha.hasError('notSame')">
+                          Os campos precisam ser iguais.
+                        </mat-error>  
+                      </mat-form-field>
+                </mat-grid-tile>
+            </mat-grid-list>
+            <div class="div-btn">
+                <button mat-raised-button [routerLink]="['../dashboard']">Fechar</button>
+                <button mat-button class="btn-salvar" (click)="alterarSenha()">Salvar</button>
+            </div>
+        </mat-card-content>
+    </form>
+</mat-card>

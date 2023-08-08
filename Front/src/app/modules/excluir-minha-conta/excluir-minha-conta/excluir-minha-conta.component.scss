@@ -1,0 +1,16 @@
+mat-card {
+    width: 400px;
+    h2 {
+        color: #f44336;
+    }
+    .div-btn {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 20px;
+        .btn-excluir{
+            background-color: #f44336; 
+            color: #fff;
+        } 
+    }
+}
