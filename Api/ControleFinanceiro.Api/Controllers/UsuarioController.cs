@@ -41,7 +41,7 @@ namespace ControleFinanceiro.Api.Controllers
         [HttpGet]
         [Route("{id}")]
         [Authorize("Bearer")]
-        public async Task<IActionResult> GetUsuarioById(int id)
+        public async Task<IActionResult> GetUsuarioByIdAsync(int id)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
@@ -56,9 +56,9 @@ namespace ControleFinanceiro.Api.Controllers
         [HttpGet]
         [Route("UsuarioLogado")]
         [Authorize("Bearer")]
-        public async Task<IActionResult> GetUsuarioLogado()
+        public async Task<IActionResult> GetUsuarioLogadoAsync()
         {
-            var usuario = await _application.GetUsuarioLogado();
+            var usuario = await _application.GetUsuarioLogadoAsync();
             if (usuario == null)
                 return NotFound();
 
@@ -67,7 +67,7 @@ namespace ControleFinanceiro.Api.Controllers
 
         [HttpPost]
         [AllowAnonymous]
-        public async Task<IActionResult> CreateUsuario([FromBody] UsuarioViewModel model)
+        public async Task<IActionResult> CreateUsuarioAsync([FromBody] UsuarioViewModel model)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
@@ -85,14 +85,14 @@ namespace ControleFinanceiro.Api.Controllers
         [HttpPut]
         [Route("{id}")]
         [Authorize("Bearer")]
-        public async Task<IActionResult> UpdateUsuario([FromRoute] int id, [FromBody] UsuarioViewModel model)
+        public async Task<IActionResult> UpdateUsuarioAsync([FromRoute] int id, [FromBody] UsuarioViewModel model)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
             var usuario = model.Model();
 
-            await _application.UpdateUsuario(id, usuario);
+            await _application.UpdateUsuarioAsync(id, usuario);
             return Ok();
 
         }
@@ -100,18 +100,18 @@ namespace ControleFinanceiro.Api.Controllers
         [HttpPut]
         [Route("DeleteUsuario")]
         [Authorize("Bearer")]
-        public async Task<IActionResult> DeleteUsuario()
+        public async Task<IActionResult> DeleteUsuarioAsync()
         {
-            await _application.DeleteUsuario();
+            await _application.DeleteUsuarioAsync();
             return Ok();
         }
 
         [HttpPut]
         [Route("AlterarSenha")]
         [Authorize("Bearer")]
-        public async Task<IActionResult> AlterarSenha(AlterarSenhaViewModel model)
+        public async Task<IActionResult> AlterarSenhaAsync(AlterarSenhaViewModel model)
         {
-            await _application.AlterarSenha(model.Senha);
+            await _application.AlterarSenhaAsync(model.Senha);
             return Ok();
         }
 

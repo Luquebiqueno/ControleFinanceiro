@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { UsuarioAutenticado } from 'src/app/models/usuario-autenticado';
 import { UsuarioLogin } from 'src/app/models/usuario-login';
 import { AutenticacaoService } from 'src/app/services/autenticacao.service';
+import { NotifierService } from 'src/app/services/notifier.service';
 
 @Component({
     selector: 'app-login',
@@ -20,7 +21,8 @@ export class LoginComponent implements OnInit {
 
     constructor(private autenticacaoService: AutenticacaoService,
         private fb: FormBuilder,
-        private router: Router,) { }
+        private notifierService: NotifierService,
+        private router: Router) { }
 
     ngOnInit(): void {
         this.validarFormulario();
@@ -35,19 +37,23 @@ export class LoginComponent implements OnInit {
 
     login(): void {
         if (this.form.invalid) {
-            alert('Dados inválidos');
+            this.notifierService.showNotification('Dados inválidos', 'Erro', 'error');
             return null;
         }
 
         this.usuarioLogin = this.form.value;
         this.autenticacaoService.getAutenticacao(this.usuarioLogin).subscribe((usuarioAutenticado: UsuarioAutenticado) => {
-            if (usuarioAutenticado && usuarioAutenticado.accessToken) {
-                localStorage['usuarioAutenticado'] = JSON.stringify(usuarioAutenticado);
-                alert(usuarioAutenticado.message);
-
-                this.router.navigate(['dashboard']);
+            if (usuarioAutenticado.authenticated) {
+                if (usuarioAutenticado && usuarioAutenticado.accessToken) {
+                    localStorage['usuarioAutenticado'] = JSON.stringify(usuarioAutenticado);
+                    this.notifierService.showNotification(usuarioAutenticado.message,'Sucesso', 'success');
+    
+                    this.router.navigate(['dashboard']);
+                } else {
+                    this.notifierService.showNotification('Ocorreu um erro ao autenticar.','Erro', 'error');
+                }
             } else {
-                alert('Ocorreu um erro ao autenticar.');
+                this.notifierService.showNotification(usuarioAutenticado.message,'Erro', 'error');
             }
         });
     }

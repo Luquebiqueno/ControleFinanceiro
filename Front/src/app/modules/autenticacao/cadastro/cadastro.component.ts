@@ -2,6 +2,7 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CustomErrorStateMatcher } from 'src/app/_utils/custom-error-state-matcher';
 import { Usuario } from 'src/app/models/usuario';
+import { NotifierService } from 'src/app/services/notifier.service';
 import { UsuarioService } from 'src/app/services/usuario.service';
 
 @Component({
@@ -19,6 +20,7 @@ export class CadastroComponent implements OnInit {
     @Output() exibirPainel: EventEmitter<string> = new EventEmitter<string>();
 
     constructor(private usuarioService: UsuarioService,
+                private notifierService: NotifierService,
                 private fb: FormBuilder) { }
 
     ngOnInit(): void {
@@ -44,17 +46,17 @@ export class CadastroComponent implements OnInit {
 
     createUsuario(): void {
         if (this.form.invalid) {
-            alert('Dados inválidos');
+            this.notifierService.showNotification('Dados inválidos', 'Erro', 'error');
             return;
         }
 
         this.usuario = this.form.value;
         this.usuarioService.createUsuario(this.usuario).subscribe((response: any) => {
-            alert('Usuário cadastrado com sucesso');
+            this.notifierService.showNotification('Usuário cadastrado com sucesso','Sucesso', 'success');
             this.exibirPainelLogin();
         },
         error => {
-            alert('Aconteceu um erro');
+            this.notifierService.showNotification('Aconteceu um erro', 'Erro', 'error');
             return;
         });
     }

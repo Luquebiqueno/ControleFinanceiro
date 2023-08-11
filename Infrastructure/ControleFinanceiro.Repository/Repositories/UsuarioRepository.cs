@@ -21,7 +21,7 @@ namespace ControleFinanceiro.Repository.Repositories
             => await _dbSet.Where(x => x.Ativo).ToListAsync();
         public override async Task<Usuario> GetByIdAsync(int id) 
             => await _dbSet.FirstOrDefaultAsync(x => x.Id == id && x.Ativo);
-        public async Task<Usuario> GetUsuarioByLoginSenha(string login, string senha)
+        public async Task<Usuario> GetUsuarioByLoginSenhaAsync(string login, string senha)
             => await _dbSet.FirstOrDefaultAsync(x => x.Email.Equals(login) && x.Senha.Equals(senha) && x.Ativo);
         public Usuario UpdateUsuario(Usuario entity)
         {

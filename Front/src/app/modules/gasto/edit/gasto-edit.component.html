@@ -1,1 +1,56 @@
-<p>gasto-edit works!</p>
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>{{ titulo }}</mat-card-title>
+    </mat-card-header>
+    <form [formGroup]="gastoForm">
+        <mat-card-content>
+            <mat-grid-list cols="2" rowHeight='100px' gutterSize="15px">
+                <mat-grid-tile>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Item</mat-label>
+                        <input type="text" id="item" formControlName="item" matInput required>
+                        <mat-error *ngIf="gastoForm.hasError('required', 'item')">
+                            Digite o item por favor.
+                        </mat-error>
+                    </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Valor</mat-label>
+                        <input type="number" step="any" id="valor" formControlName="valor" matInput required>
+                        <mat-error *ngIf="gastoForm.hasError('required', 'valor')">
+                            Digite o valor por favor.
+                        </mat-error>
+                    </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Data da Compra</mat-label>
+                        <input formControlName="dataCompra" id="dataCompra" matInput [matDatepicker]="picker" required>
+                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker #picker></mat-datepicker>
+                        <mat-error *ngIf="gastoForm.hasError('required', 'dataCompra')">
+                            Selecione a data por favor.
+                        </mat-error>
+                    </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Tipo de Gasto</mat-label>
+                        <mat-select formControlName="gastoTipoId">
+                            <mat-option [value]="1">Gasto Fixo</mat-option>
+                            <mat-option [value]="2">Gasto Variável</mat-option>
+                        </mat-select>
+                        <mat-error *ngIf="gastoForm.hasError('required', 'dataCompra')">
+                            Selecione o tipo de gasto por favor.
+                        </mat-error>
+                    </mat-form-field>
+                </mat-grid-tile>
+            </mat-grid-list>
+            <div class="div-btn">
+                <button mat-raised-button class="btn-voltar" (click)="voltar()">Voltar</button>
+                <button mat-button class="btn-salvar" (click)="salvar()">Salvar</button>
+            </div>
+        </mat-card-content>
+    </form>
+</mat-card>

@@ -20,7 +20,8 @@ namespace ControleFinanceiro.Domain.Services
         #region [ Propriedades ]
 
         private const string Date_Format = "yyyy-MM-dd HH:mm:ss";
-        private const string message = "Usuário Logado com sucesso.";
+        private const string messageOAuth = "Usuário Logado com sucesso.";
+        private const string message = "Usuário ou Senha Errado.";
         private readonly TokenConfiguration _configuration;
         private readonly ITokenService _tokenService;
         private readonly IUsuarioService<TContext> _usuarioService;
@@ -47,9 +48,10 @@ namespace ControleFinanceiro.Domain.Services
             if (!string.IsNullOrEmpty(senha))
                 senha = SHACryptography.Encrypt(SHACryptography.Algorithm.SHA512, senha);
 
-            var usuario = await _usuarioService.GetUsuarioByLoginSenha(email, senha);
+            var usuario = await _usuarioService.GetUsuarioByLoginSenhaAsync(email, senha);
 
-            if (usuario == null) return null;
+            if (usuario == null) 
+                return new TokenDto(false, string.Empty, string.Empty, string.Empty, string.Empty, message); ;
 
             var claims = new List<Claim>
             {
@@ -64,12 +66,12 @@ namespace ControleFinanceiro.Domain.Services
             usuario.AtualizarRefreshToken(refreshToken);
             usuario.AtualizarRefreshTokenExpiryTime(DateTime.Now.AddDays(_configuration.DaysToExpiry));
 
-            await _usuarioService.UpdateUsuario(usuario.Id, usuario);
+            await _usuarioService.UpdateUsuarioAsync(usuario.Id, usuario);
 
             DateTime createDate = DateTime.Now;
             DateTime expirationDate = createDate.AddMinutes(_configuration.Minutes);
 
-            return new TokenDto(true, createDate.ToString(Date_Format), expirationDate.ToString(Date_Format), accessToken, refreshToken, message);
+            return new TokenDto(true, createDate.ToString(Date_Format), expirationDate.ToString(Date_Format), accessToken, refreshToken, messageOAuth);
         }
 
         #endregion

@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using ControleFinanceiro.Api.Models;
 using ControleFinanceiro.Domain.Dto;
 using ControleFinanceiro.Domain.Entities;
 
@@ -9,6 +10,9 @@ namespace ControleFinanceiro.Api.AutoMapper
         public MappingProfileConfiguration()
         {
             CreateMap<Usuario, UsuarioDto>();
+
+            CreateMap<Gasto, GastoViewModel>()
+            .ReverseMap();
         }
     }
 }

@@ -1,0 +1,37 @@
+mat-card-title {
+    font-size: 25px;
+    font-weight: 600;
+}
+mat-form-field {
+    width: 100%;
+}
+.div-btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .btn-cadastro {
+        background-color: #7cb342; 
+        color: #fff;
+    }
+    .btn-limpar {
+        margin-left: 10px;
+        width: 100px;
+        background-color: #f44336;
+        color: #fff;
+    }
+}
+table {
+    margin-top: 10px;
+}
+.btn-edit {
+    color: #707070;
+}
+.btn-delete {
+    color: #707070;
+}
+.btn-delete:hover {
+    color: #f44336;
+}
+.list-card {
+    text-align: center;
+}

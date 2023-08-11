@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { CustomErrorStateMatcher } from 'src/app/_utils/custom-error-state-matcher';
 import { AlterarSenha } from 'src/app/models/alterar-senha';
+import { NotifierService } from 'src/app/services/notifier.service';
 import { UsuarioService } from 'src/app/services/usuario.service';
 
 @Component({
@@ -19,7 +20,8 @@ export class AlterarSenhaComponent implements OnInit {
 
     constructor(private formBuilder: FormBuilder,
         private usuarioService: UsuarioService,
-        private router: Router) { }
+        private router: Router,
+        private notifierService: NotifierService) { }
 
     ngOnInit(): void {
         this.formAlterarSenha = this.formBuilder.group({
@@ -36,14 +38,32 @@ export class AlterarSenhaComponent implements OnInit {
     }
 
     alterarSenha() {
-        this._alterarSenha = this.formAlterarSenha.value;    
+        this._alterarSenha = this.formAlterarSenha.value;
+
+        if (!this.validaSenhaForte(this._alterarSenha.senha)) return;
+
         this.usuarioService.alterarSenha(this._alterarSenha).subscribe((response: any) => {
-          alert('Senha atualizada com sucesso');
-          this.router.navigate(['autenticacao']);
+            this.notifierService.showNotification('Senha atualizada com sucesso','Sucesso', 'success');
+            this.router.navigate(['autenticacao']);
         },
         error => {
-          alert('Aconteceu um erro');
+            this.notifierService.showNotification('Aconteceu um erro','Erro', 'error');
         });
-      }
+    }
+
+    validaSenhaForte(senha: string): boolean {
+        if (!senha.match(/[a-z]+/)) {
+            this.notifierService.showNotification('A senha precisa ter pelo menos um caractere minúsculo', 'Erro', 'error');
+            return false;
+        } else if (!senha.match(/[A-Z]+/)) {
+            this.notifierService.showNotification('A senha precisa ter pelo menos um caractere maiúsculo', 'Erro', 'error');
+            return false;
+        } else if (!senha.match(/[!@#$%&*?:;]+/)) {
+            this.notifierService.showNotification('A senha precisa ter pelo menos um caractere especial', 'Erro', 'error');
+            return false;
+        } else {
+            return true;
+        }
+    }
 
 }

@@ -38,15 +38,15 @@ namespace ControleFinanceiro.Domain.Services
 
         public override async Task<Usuario> CreateAsync(Usuario entity)
         {
-            await ValidarEmail(entity.Email, entity.Id);
+            await ValidarEmailAsync(entity.Email, entity.Id);
 
             return await base.CreateAsync(entity);
         }
-        public async Task<Usuario> GetUsuarioByLoginSenha(string login, string senha) 
-            => await _repository.GetUsuarioByLoginSenha(login, senha);
-        public async Task<Usuario> GetUsuarioLogado() 
+        public async Task<Usuario> GetUsuarioByLoginSenhaAsync(string login, string senha) 
+            => await _repository.GetUsuarioByLoginSenhaAsync(login, senha);
+        public async Task<Usuario> GetUsuarioLogadoAsync() 
             => await _repository.GetByIdAsync(_usuarioLogado.Usuario.Id);
-        public async Task DeleteUsuario()
+        public async Task DeleteUsuarioAsync()
         {
             var usuario = await _repository.GetByIdAsync(_usuarioLogado.Usuario.Id);
 
@@ -55,7 +55,7 @@ namespace ControleFinanceiro.Domain.Services
 
             _repository.UpdateUsuario(usuario);
         }
-        public async Task AlterarSenha(string senha)
+        public async Task AlterarSenhaAsync(string senha)
         {
             var usuario = await _repository.GetByIdAsync(_usuarioLogado.Usuario.Id);
 
@@ -64,9 +64,9 @@ namespace ControleFinanceiro.Domain.Services
 
             _repository.UpdateUsuario(usuario);
         }
-        public async Task<Usuario> UpdateUsuario(int id, Usuario entity)
+        public async Task<Usuario> UpdateUsuarioAsync(int id, Usuario entity)
         {
-            await ValidarEmail(entity.Email, id);
+            await ValidarEmailAsync(entity.Email, id);
 
             var usuario = await _repository.GetByIdAsync(id);
 
@@ -79,12 +79,12 @@ namespace ControleFinanceiro.Domain.Services
 
             return _repository.UpdateUsuario(usuario);
         }
-        private async Task ValidarEmail(string email, int id)
+        private async Task ValidarEmailAsync(string email, int id)
         {
             var usuario = await GetAllAsync();
 
             if (usuario.Any(x => x.Email.Equals(email) && !x.Id.Equals(id)))
-                throw new DomainException(nameof(UsuarioService<TContext>), nameof(ValidarEmail), "Já existe uma conta cadastrada com este e-mail.");
+                throw new DomainException(nameof(UsuarioService<TContext>), nameof(ValidarEmailAsync), "Já existe uma conta cadastrada com este e-mail.");
         }
 
         #endregion

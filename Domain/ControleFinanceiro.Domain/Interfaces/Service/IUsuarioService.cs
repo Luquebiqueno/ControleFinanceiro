@@ -11,10 +11,10 @@ namespace ControleFinanceiro.Domain.Interfaces.Service
     public interface IUsuarioService<TContext> : IServiceBase<TContext, Usuario, int>
                                 where TContext : IUnitOfWork<TContext>
     {
-        Task<Usuario> UpdateUsuario(int id, Usuario entity);
-        Task DeleteUsuario();
-        Task AlterarSenha(string senha);
-        Task<Usuario> GetUsuarioByLoginSenha(string login, string senha);
-        Task<Usuario> GetUsuarioLogado();
+        Task<Usuario> UpdateUsuarioAsync(int id, Usuario entity);
+        Task DeleteUsuarioAsync();
+        Task AlterarSenhaAsync(string senha);
+        Task<Usuario> GetUsuarioByLoginSenhaAsync(string login, string senha);
+        Task<Usuario> GetUsuarioLogadoAsync();
     }
 }

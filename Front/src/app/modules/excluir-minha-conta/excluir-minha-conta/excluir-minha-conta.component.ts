@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
+import { NotifierService } from 'src/app/services/notifier.service';
 import { UsuarioService } from 'src/app/services/usuario.service';
 
 @Component({
@@ -12,16 +13,17 @@ export class ExcluirMinhaContaComponent {
 
     constructor(private usuarioService: UsuarioService,
         private router: Router,
+        private notifierService: NotifierService,
         private dialog: MatDialog) { }
 
-    public excluirConta() {
+    excluirConta() {
         this.usuarioService.deleteUsuario().subscribe((response: any) => {
             this.dialog.closeAll();
-            alert('A sua conta foi excluída');
+            this.notifierService.showNotification('A sua conta foi excluída','Sucesso', 'success');
             this.router.navigate(['autenticacao']);
         },
         error => {
-            alert('Aconteceu um erro');
+            this.notifierService.showNotification('Aconteceu um erro','Erro', 'error');
         });
     }
 }

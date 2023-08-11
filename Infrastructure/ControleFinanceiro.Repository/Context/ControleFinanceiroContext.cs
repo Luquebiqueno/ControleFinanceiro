@@ -20,6 +20,8 @@ namespace ControleFinanceiro.Repository.Context
         {
             base.OnModelCreating(modelBuilder);
             modelBuilder.ApplyConfiguration(new UsuarioMap());
+            modelBuilder.ApplyConfiguration(new GastoMap());
+            modelBuilder.ApplyConfiguration(new GastoTipoMap());
         }
     }
 }

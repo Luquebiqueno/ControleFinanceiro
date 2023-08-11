@@ -31,25 +31,25 @@ namespace ControleFinanceiro.Application.ServiceApplications
 
         #region [ Métodos ]
 
-        public async Task<Usuario> GetUsuarioLogado() 
-            => await _service.GetUsuarioLogado();
-        public async Task<Usuario> UpdateUsuario(int id, Usuario entity)
+        public async Task<Usuario> GetUsuarioLogadoAsync() 
+            => await _service.GetUsuarioLogadoAsync();
+        public async Task<Usuario> UpdateUsuarioAsync(int id, Usuario entity)
         {
-            await _service.UpdateUsuario(id, entity);
+            await _service.UpdateUsuarioAsync(id, entity);
             await _unitOfWork.CommitAsync();
 
             return entity;
         }
 
-        public async Task AlterarSenha(string senha)
+        public async Task AlterarSenhaAsync(string senha)
         {
-            await _service.AlterarSenha(senha);
+            await _service.AlterarSenhaAsync(senha);
             await _unitOfWork.CommitAsync();
         }
 
-        public async Task DeleteUsuario()
+        public async Task DeleteUsuarioAsync()
         {
-            await _service.DeleteUsuario();
+            await _service.DeleteUsuarioAsync();
             await _unitOfWork.CommitAsync();
         }
 

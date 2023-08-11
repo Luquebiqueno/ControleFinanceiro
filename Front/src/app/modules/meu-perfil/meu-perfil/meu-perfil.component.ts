@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Usuario } from 'src/app/models/usuario';
+import { NotifierService } from 'src/app/services/notifier.service';
 import { UsuarioService } from 'src/app/services/usuario.service';
 
 @Component({
@@ -16,6 +17,7 @@ export class MeuPerfilComponent implements OnInit {
 
     constructor(private usuarioService: UsuarioService,
                 private fb: FormBuilder,
+                private notifierService: NotifierService,
                 private router: Router) { }
 
     ngOnInit(): void {
@@ -45,14 +47,13 @@ export class MeuPerfilComponent implements OnInit {
     }
 
     updateUsuario() {
-        debugger;
         this.usuario = this.meuPerfilForm.value;
         this.usuarioService.updateUsuario(this.usuario.id, this.usuario).subscribe((response: Usuario) => {
-            alert('Usuário atualizado com sucesso');
+            this.notifierService.showNotification('Usuário atualizado com sucesso','Sucesso', 'success');
             this.router.navigate(['../../dashboard']);
         },
         error => {
-            alert('Aconteceu um erro');
+            this.notifierService.showNotification('Aconteceu um erro', 'Erro', 'error');
         });
     }
 }
