@@ -5,12 +5,14 @@ import { MaterialModule } from 'src/app/material/material.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { GastoListComponent } from './list/gasto-list.component';
 import { GastoEditComponent } from './edit/gasto-edit.component';
+import { DialogComponent } from './dialog/dialog.component';
 
 
 @NgModule({
     declarations: [
         GastoListComponent,
-        GastoEditComponent
+        GastoEditComponent,
+        DialogComponent
     ],
     imports: [
         CommonModule,

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Gasto } from 'src/app/models/gasto';
 import { GastoService } from 'src/app/services/gasto.service';
+import { DialogComponent } from '../dialog/dialog.component';
 
 @Component({
     selector: 'app-gasto-list',
@@ -35,5 +36,9 @@ export class GastoListComponent implements OnInit {
                 this.listar = true;
             }
         });
+    }
+
+    openDialogDeleteGasto(id:number) {
+        this.dialog.open(DialogComponent, {data: {id: id}});
     }
 }

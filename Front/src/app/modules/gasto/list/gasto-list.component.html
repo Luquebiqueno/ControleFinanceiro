@@ -75,7 +75,7 @@
             <button mat-icon-button matTooltip="Editar" class="btn-edit" aria-label="editar" [routerLink]="['edit', gasto.id]">
                 <mat-icon>edit</mat-icon>
             </button>
-            <button mat-icon-button matTooltip="Excluir" class="btn-delete" aria-label="excluir">
+            <button mat-icon-button matTooltip="Excluir" class="btn-delete" aria-label="excluir" (click)="openDialogDeleteGasto(gasto.id)">
                 <mat-icon>delete</mat-icon>
             </button>
         </td>
