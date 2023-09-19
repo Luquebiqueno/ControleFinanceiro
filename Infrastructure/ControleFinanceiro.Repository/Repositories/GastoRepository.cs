@@ -21,7 +21,7 @@ namespace ControleFinanceiro.Repository.Repositories
             _context = ((DbContext)unitOfWork);
         }
 
-        public async Task<(List<GastoDto>, int)> GetGastoAsync(int usuarioId, string item, decimal valor, int gastoTipoId, string dataCompra)
+        public async Task<(List<GastoDto>, int)> GetGastoAsync(int usuarioId, string item, decimal valor, int gastoTipoId, string dataCompra, int pagina)
         {
             var query = (from ga in _context.Set<Gasto>()
                          join gt in _context.Set<GastoTipo>() on ga.GastoTipoId equals gt.Id
@@ -49,7 +49,7 @@ namespace ControleFinanceiro.Repository.Repositories
                 query = query.Where(x => x.GastoTipoId.Equals(gastoTipoId));
 
             var qtdItens = await query.CountAsync();
-            var result = await query.OrderByDescending(x => x.Id).Skip(0).Take(10).ToListAsync();
+            var result = await query.OrderByDescending(x => x.Id).Skip(pagina).Take(5).ToListAsync();
 
             return (result, qtdItens);
         }

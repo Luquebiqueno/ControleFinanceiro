@@ -1,8 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, LOCALE_ID, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Gasto } from 'src/app/models/gasto';
 import { GastoService } from 'src/app/services/gasto.service';
 import { DialogComponent } from '../dialog/dialog.component';
+import { PageEvent } from '@angular/material/paginator';
+import { formatDate } from '@angular/common';
 
 @Component({
     selector: 'app-gasto-list',
@@ -14,6 +16,7 @@ export class GastoListComponent implements OnInit {
     gastos: Gasto[];
     listar: boolean = false;
     pagina = 0;
+    qtdItens = 0;
     displayedColumns: string[] = ['item', 'valor', 'dataCompra', 'gastoTipo', 'acoes'];
     pesquisa: any = {
         item: '',
@@ -23,15 +26,18 @@ export class GastoListComponent implements OnInit {
     }
 
     constructor(private gastoService: GastoService,
-                private dialog: MatDialog) { }
+                private dialog: MatDialog,
+                @Inject(LOCALE_ID) public locale: string) { }
 
     ngOnInit(): void {
         this.getGasto();
     }
 
     getGasto() {
+        //let dataCompra = formatDate(this.pesquisa.dataCompra, 'dd-MM-yyyy' ,this.locale);
         this.gastoService.getGasto(this.pesquisa.item, this.pesquisa.valor, this.pesquisa.gastoTipoId, this.pesquisa.dataCompra, this.pagina).subscribe((response: any) => {
             this.gastos = response.data
+            this.qtdItens = response.qtdItens;
             if (this.gastos.length > 0) {
                 this.listar = true;
             }
@@ -40,5 +46,23 @@ export class GastoListComponent implements OnInit {
 
     openDialogDeleteGasto(id:number) {
         this.dialog.open(DialogComponent, {data: {id: id}});
+    }
+
+    limpar() {
+        this.gastos = [];
+        this.listar = false;
+        this.pagina = 0;
+        this.qtdItens = 0;
+        this.pesquisa = {
+            item: '',
+            valor: 0,
+            dataCompra: '',
+            gastoTipoId: 0
+        };
+    }
+
+    handlePageEvent(pageEvent: PageEvent) {
+        this.pagina = pageEvent.pageIndex;
+        this.getGasto();
     }
 }

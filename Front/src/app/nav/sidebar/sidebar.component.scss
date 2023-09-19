@@ -37,7 +37,7 @@ mat-list {
         }
         a:hover:before {
             content: "";
-            position: relative;
+            position: absolute;
             height: 5px;
             width: 5px;
             border-radius: 50%;

@@ -34,7 +34,7 @@ namespace ControleFinanceiro.Api.Controllers
         [Authorize("Bearer")]
         public async Task<IActionResult> GetGastoAsync(string item, decimal valor, int gastoTipoId, string dataCompra, int pagina)
         {
-            var (result, qtdItens) = await _application.GetGastoAsync(item, valor, gastoTipoId, dataCompra);
+            var (result, qtdItens) = await _application.GetGastoAsync(item, valor, gastoTipoId, dataCompra, pagina);
             return Ok(new { data = result, qtdItens });
         }
 

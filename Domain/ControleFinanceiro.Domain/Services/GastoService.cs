@@ -37,8 +37,8 @@ namespace ControleFinanceiro.Domain.Services
 
         #region [ Métodos ]
 
-        public async Task<(List<GastoDto>, int)> GetGastoAsync(string item, decimal valor, int gastoTipoId, string dataCompra)
-            => await _repository.GetGastoAsync(_usuarioLogado.Usuario.Id, item, valor, gastoTipoId, dataCompra);
+        public async Task<(List<GastoDto>, int)> GetGastoAsync(string item, decimal valor, int gastoTipoId, string dataCompra, int pagina)
+            => await _repository.GetGastoAsync(_usuarioLogado.Usuario.Id, item, valor, gastoTipoId, dataCompra, pagina);
 
         public override async Task<Gasto> CreateAsync(Gasto entity)
         {

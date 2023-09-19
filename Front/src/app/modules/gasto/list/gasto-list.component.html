@@ -39,7 +39,7 @@
                 <button mat-raised-button color="primary" (click)="getGasto()">
                     <mat-icon>search</mat-icon> Pesquisar
                 </button>
-                <button mat-raised-button class="btn-limpar">Limpar</button>
+                <button mat-raised-button class="btn-limpar" (click)="limpar()">Limpar</button>
             </div>
             <button mat-button class="btn-cadastro" [routerLink]="['create']">
                 <mat-icon>add</mat-icon> Cadastrar
@@ -52,35 +52,41 @@
     <mat-card-title>Não foram encontrados registros.</mat-card-title>
 </mat-card>
 
-<table mat-table [dataSource]="gastos" class="mat-elevation-z8" *ngIf="listar">
-    <ng-container matColumnDef="item">
-        <th mat-header-cell *matHeaderCellDef> Item </th>
-        <td mat-cell *matCellDef="let gasto"> {{gasto.item}} </td>
-    </ng-container>
-    <ng-container matColumnDef="valor">
-        <th mat-header-cell *matHeaderCellDef> Valor </th>
-        <td mat-cell *matCellDef="let gasto"> {{gasto.valor | currency : 'R$ '}} </td>
-    </ng-container>
-    <ng-container matColumnDef="dataCompra">
-        <th mat-header-cell *matHeaderCellDef> Data da Compra </th>
-        <td mat-cell *matCellDef="let gasto"> {{gasto.dataCompra | date: 'dd/MM/yyyy'}} </td>
-    </ng-container>
-    <ng-container matColumnDef="gastoTipo">
-        <th mat-header-cell *matHeaderCellDef> Tipo de Gasto </th>
-        <td mat-cell *matCellDef="let gasto"> {{gasto.gastoTipoId == 1 ? 'Gasto Fixo' : 'Gasto Variável'}} </td>
-    </ng-container>
-    <ng-container matColumnDef="acoes">
-        <th mat-header-cell *matHeaderCellDef> Ações </th>
-        <td mat-cell *matCellDef="let gasto">
-            <button mat-icon-button matTooltip="Editar" class="btn-edit" aria-label="editar" [routerLink]="['edit', gasto.id]">
-                <mat-icon>edit</mat-icon>
-            </button>
-            <button mat-icon-button matTooltip="Excluir" class="btn-delete" aria-label="excluir" (click)="openDialogDeleteGasto(gasto.id)">
-                <mat-icon>delete</mat-icon>
-            </button>
-        </td>
-    </ng-container>
-
-    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-</table>
+<div class="mat-elevation-z8" *ngIf="listar">
+    <table mat-table [dataSource]="gastos">
+        <ng-container matColumnDef="item">
+            <th mat-header-cell *matHeaderCellDef> Item </th>
+            <td mat-cell *matCellDef="let gasto"> {{gasto.item}} </td>
+        </ng-container>
+        <ng-container matColumnDef="valor">
+            <th mat-header-cell *matHeaderCellDef> Valor </th>
+            <td mat-cell *matCellDef="let gasto"> {{gasto.valor | currency : 'R$ '}} </td>
+        </ng-container>
+        <ng-container matColumnDef="dataCompra">
+            <th mat-header-cell *matHeaderCellDef> Data da Compra </th>
+            <td mat-cell *matCellDef="let gasto"> {{gasto.dataCompra | date: 'dd/MM/yyyy'}} </td>
+        </ng-container>
+        <ng-container matColumnDef="gastoTipo">
+            <th mat-header-cell *matHeaderCellDef> Tipo de Gasto </th>
+            <td mat-cell *matCellDef="let gasto"> {{gasto.gastoTipoId == 1 ? 'Gasto Fixo' : 'Gasto Variável'}} </td>
+        </ng-container>
+        <ng-container matColumnDef="acoes">
+            <th mat-header-cell *matHeaderCellDef> Ações </th>
+            <td mat-cell *matCellDef="let gasto">
+                <button mat-icon-button matTooltip="Editar" class="btn-edit" aria-label="editar" [routerLink]="['edit', gasto.id]">
+                    <mat-icon>edit</mat-icon>
+                </button>
+                <button mat-icon-button matTooltip="Excluir" class="btn-delete" aria-label="excluir" (click)="openDialogDeleteGasto(gasto.id)">
+                    <mat-icon>delete</mat-icon>
+                </button>
+            </td>
+        </ng-container>
+    
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+    <mat-divider></mat-divider>
+    <mat-paginator [length]="qtdItens" [pageSize]="5" [showFirstLastButtons]="true" [pageSizeOptions]="[5, 10]" 
+        [pageIndex]="pagina" [hidePageSize]="true" (page)="handlePageEvent($event)">
+    </mat-paginator>
+</div>

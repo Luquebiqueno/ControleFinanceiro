@@ -12,7 +12,7 @@ namespace ControleFinanceiro.Domain.Interfaces.Application
     public interface IGastoApplication<TContext> : IApplicationBase<TContext, Gasto, int>
                                   where TContext : IUnitOfWork<TContext>
     {
-        Task<(List<GastoDto>, int)> GetGastoAsync(string item, decimal valor, int gastoTipoId, string dataCompra);
+        Task<(List<GastoDto>, int)> GetGastoAsync(string item, decimal valor, int gastoTipoId, string dataCompra, int pagina);
         Task<Gasto> UpdateGastoAsync(int id, Gasto entity);
         Task DeleteGastoAsync(int id);
     }

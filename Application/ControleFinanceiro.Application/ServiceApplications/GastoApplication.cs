@@ -33,8 +33,8 @@ namespace ControleFinanceiro.Application.ServiceApplications
 
         #region [ Métodos ]
 
-        public async Task<(List<GastoDto>, int)> GetGastoAsync(string item, decimal valor, int gastoTipoId, string dataCompra)
-            => await _service.GetGastoAsync(item, valor, gastoTipoId, dataCompra);
+        public async Task<(List<GastoDto>, int)> GetGastoAsync(string item, decimal valor, int gastoTipoId, string dataCompra, int pagina)
+            => await _service.GetGastoAsync(item, valor, gastoTipoId, dataCompra, pagina);
         public async Task DeleteGastoAsync(int id)
         {
             await _service.DeleteGastoAsync(id);

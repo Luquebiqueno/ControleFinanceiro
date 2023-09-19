@@ -21,6 +21,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatExpansionModule } from '@angular/material/expansion';
+import { MatDividerModule } from '@angular/material/divider';
 
 const materialComponent = [
     LayoutModule,
@@ -44,7 +45,8 @@ const materialComponent = [
     MatDialogModule,
     MatGridListModule,
     MatCheckboxModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatDividerModule
 ];
 
 @NgModule({
