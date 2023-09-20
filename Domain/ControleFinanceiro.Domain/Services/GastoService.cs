@@ -72,6 +72,25 @@ namespace ControleFinanceiro.Domain.Services
             base.Update(gasto);
         }
 
+        public async Task<byte[]> ExportarArquivo(string item, decimal valor, int gastoTipoId, string dataCompra)
+        {
+            var gastos = await _repository.ExportarArquivo(_usuarioLogado.Usuario.Id, item, valor, gastoTipoId, dataCompra);
+
+            StringBuilder file = new StringBuilder();
+
+            file.AppendLine("Item;Valor;Data da Compra;Tipo de Gasto");
+
+            if (gastos.Any()) 
+            {
+                foreach(var gasto in gastos ) 
+                {
+                    file.AppendLine($"{gasto.Item};{gasto.Valor};{gasto.DataCompra};{gasto.GastoTipo}");
+                }
+            }
+
+            return Encoding.UTF32.GetBytes(file.ToString());
+        }
+
         #endregion
     }
 }

@@ -8,5 +8,6 @@ namespace ControleFinanceiro.Domain.Interfaces.Repository
                                  where TContext : IUnitOfWork<TContext>
     {
         Task<(List<GastoDto>, int)> GetGastoAsync(int usuarioId, string item, decimal valor, int gastoTipoId, string dataCompra, int pagina);
+        Task<List<GastoDto>> ExportarArquivo(int usuarioId, string item, decimal valor, int gastoTipoId, string dataCompra);
     }
 }

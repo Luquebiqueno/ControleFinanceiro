@@ -5,6 +5,7 @@ import { GastoService } from 'src/app/services/gasto.service';
 import { DialogComponent } from '../dialog/dialog.component';
 import { PageEvent } from '@angular/material/paginator';
 import { formatDate } from '@angular/common';
+import { NotifierService } from 'src/app/services/notifier.service';
 
 @Component({
     selector: 'app-gasto-list',
@@ -27,6 +28,7 @@ export class GastoListComponent implements OnInit {
 
     constructor(private gastoService: GastoService,
                 private dialog: MatDialog,
+                private notifierService: NotifierService,
                 @Inject(LOCALE_ID) public locale: string) { }
 
     ngOnInit(): void {
@@ -41,6 +43,26 @@ export class GastoListComponent implements OnInit {
             if (this.gastos.length > 0) {
                 this.listar = true;
             }
+        });
+    }
+
+    exportar() {
+        this.gastoService.exportarArquivo(this.pesquisa.item, this.pesquisa.valor, this.pesquisa.gastoTipoId, this.pesquisa.dataCompra).subscribe((response: any) => {
+            const blob = new Blob([response]);
+            const fileName = 'relatorio_gastos.csv';
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            document.body.appendChild(a);
+            a.href = url;
+            a.download = fileName;
+            a.click();
+            document.body.removeChild(a);
+            window.URL.revokeObjectURL(url);
+            this.notifierService.showNotification('Arquivo exportado com sucesso', 'Sucesso', 'success');
+        },
+        error => {
+            this.notifierService.showNotification('Aconteceu um erro', 'Erro', 'error');
+            return;
         });
     }
 

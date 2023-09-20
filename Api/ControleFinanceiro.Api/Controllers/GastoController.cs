@@ -93,6 +93,16 @@ namespace ControleFinanceiro.Api.Controllers
             return Ok();
         }
 
+        [HttpGet]
+        [Route("ExportarArquivo")]
+        [Authorize("Bearer")]
+        public async Task<IActionResult> ExportarArquivo(string item, decimal valor, int gastoTipoId, string dataCompra)
+        {
+            var result = await _application.ExportarArquivo(item, valor, gastoTipoId, dataCompra);
+
+            return File(result, "application/text");
+        }
+
         #endregion
     }
 }

@@ -48,6 +48,9 @@ namespace ControleFinanceiro.Application.ServiceApplications
             return entity;
         }
 
+        public async Task<byte[]> ExportarArquivo(string item, decimal valor, int gastoTipoId, string dataCompra)
+            => await _service.ExportarArquivo(item, valor, gastoTipoId, dataCompra);
+
         #endregion
     }
 }

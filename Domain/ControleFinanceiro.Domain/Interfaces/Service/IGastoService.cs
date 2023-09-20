@@ -15,5 +15,6 @@ namespace ControleFinanceiro.Domain.Interfaces.Service
         Task<(List<GastoDto>, int)> GetGastoAsync(string item, decimal valor, int gastoTipoId, string dataCompra, int pagina);
         Task<Gasto> UpdateGastoAsync(int id, Gasto entity);
         Task DeleteGastoAsync(int id);
+        Task<byte[]> ExportarArquivo(string item, decimal valor, int gastoTipoId, string dataCompra);
     }
 }

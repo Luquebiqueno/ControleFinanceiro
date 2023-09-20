@@ -32,4 +32,8 @@ export class GastoService {
     deleteGasto(id: string): Observable<any> {
         return this.http.put<Gasto>(this.url + '/DeleteGasto/' + id, null);
     }
+
+    exportarArquivo(item: any, valor: any, gastoTipoId: any, dataCompra: any): Observable<any> {
+        return this.http.get(this.url + `/ExportarArquivo?item=${item}&valor=${valor}&gastoTipoId=${gastoTipoId}&dataCompra=${dataCompra}`, { responseType: 'blob' as 'json' });
+    }
 }
