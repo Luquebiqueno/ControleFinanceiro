@@ -19,7 +19,7 @@
             <mat-grid-tile>
                 <mat-form-field appearance="outline">
                     <mat-label>Data da Compra</mat-label>
-                    <input type="date" id="dataCompra" [(ngModel)]="pesquisa.dataCompra" matInput [matDatepicker]="picker">
+                    <input id="dataCompra" [(ngModel)]="pesquisa.dataCompra" matInput [matDatepicker]="picker">
                     <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                     <mat-datepicker #picker></mat-datepicker>
                 </mat-form-field>

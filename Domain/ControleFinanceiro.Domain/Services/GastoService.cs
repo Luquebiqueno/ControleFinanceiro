@@ -37,6 +37,8 @@ namespace ControleFinanceiro.Domain.Services
 
         #region [ Métodos ]
 
+        public override IEnumerable<Gasto> GetAll()
+            => base.GetAll().Where(x => x.Ativo && x.UsuarioCadastro.Equals(_usuarioLogado.Usuario.Id));
         public async Task<(List<GastoDto>, int)> GetGastoAsync(string item, decimal valor, int gastoTipoId, string dataCompra, int pagina)
             => await _repository.GetGastoAsync(_usuarioLogado.Usuario.Id, item, valor, gastoTipoId, dataCompra, pagina);
 

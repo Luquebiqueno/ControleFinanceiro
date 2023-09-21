@@ -36,8 +36,13 @@ export class GastoListComponent implements OnInit {
     }
 
     getGasto() {
-        //let dataCompra = formatDate(this.pesquisa.dataCompra, 'dd-MM-yyyy' ,this.locale);
-        this.gastoService.getGasto(this.pesquisa.item, this.pesquisa.valor, this.pesquisa.gastoTipoId, this.pesquisa.dataCompra, this.pagina).subscribe((response: any) => {
+        let dataCompra = '';
+
+        if (this.pesquisa.dataCompra !== undefined && this.pesquisa.dataCompra !== null && this.pesquisa.dataCompra !== '') {
+            dataCompra = formatDate(this.pesquisa.dataCompra, 'dd-MM-yyyy' ,this.locale);
+        }
+
+        this.gastoService.getGasto(this.pesquisa.item, this.pesquisa.valor, this.pesquisa.gastoTipoId, dataCompra, this.pagina).subscribe((response: any) => {
             this.gastos = response.data
             this.qtdItens = response.qtdItens;
             if (this.gastos.length > 0) {
@@ -81,6 +86,8 @@ export class GastoListComponent implements OnInit {
             dataCompra: '',
             gastoTipoId: 0
         };
+
+        this.getGasto();
     }
 
     handlePageEvent(pageEvent: PageEvent) {

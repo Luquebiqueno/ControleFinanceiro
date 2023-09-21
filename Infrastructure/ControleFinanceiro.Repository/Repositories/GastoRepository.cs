@@ -49,7 +49,7 @@ namespace ControleFinanceiro.Repository.Repositories
                 query = query.Where(x => x.GastoTipoId.Equals(gastoTipoId));
 
             var qtdItens = await query.CountAsync();
-            var result = await query.OrderByDescending(x => x.Id).Skip(pagina).Take(5).ToListAsync();
+            var result = await query.Skip(pagina).Take(5).OrderByDescending(x => x.DataCompra).ToListAsync();
 
             return (result, qtdItens);
         }

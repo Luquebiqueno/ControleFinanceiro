@@ -19,6 +19,7 @@ namespace ControleFinanceiro.Domain.Services
         #region [ Propriedades ]
 
         private new readonly IUsuarioRepository<TContext> _repository;
+        private readonly IGastoService<TContext> _gastoService;
         private readonly IUsuarioLogado _usuarioLogado;
 
         #endregion
@@ -26,9 +27,11 @@ namespace ControleFinanceiro.Domain.Services
         #region [ Construtor ]
 
         public UsuarioService(IUsuarioRepository<TContext> repository,
+                              IGastoService<TContext> gastoService,
                               IUsuarioLogado usuarioLogado) : base(repository)
         {
             _repository = repository;
+            _gastoService = gastoService;   
             _usuarioLogado = usuarioLogado;
         }
 
@@ -54,6 +57,14 @@ namespace ControleFinanceiro.Domain.Services
             usuario.AtualizarDataAlteracao();
 
             _repository.UpdateUsuario(usuario);
+
+            if (_gastoService.GetAll().Any())
+            {
+                foreach (var gastoId in _gastoService.GetAll().Select(x => x.Id))
+                {
+                    await _gastoService.DeleteGastoAsync(gastoId);
+                }
+            }
         }
         public async Task AlterarSenhaAsync(string senha)
         {
