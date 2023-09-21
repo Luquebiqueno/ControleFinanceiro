@@ -50,12 +50,13 @@ table {
 
 html, body { height: 100%; }
 
-.error.mat-snack-bar-container {
-  background: #f44336;
-  color: #ffffff;
+.error {
+  --mdc-snackbar-container-color: #f44336;
+  //--mat-mdc-snack-bar-button-color: #ffffff;
+  --mdc-snackbar-supporting-text-color: #ffffff;
 }
-
-.success.mat-snack-bar-container{
-  background: #7cb342;
-  color: #ffffff;
+.success {
+  --mdc-snackbar-container-color: #7cb342;
+  //--mat-mdc-snack-bar-button-color: #ffffff;
+  --mdc-snackbar-supporting-text-color: #ffffff;
 }
