@@ -4,6 +4,7 @@ using ControleFinanceiro.Domain.Interfaces.Application;
 using ControleFinanceiro.Repository.Context;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.IdentityModel.Tokens;
 
 namespace ControleFinanceiro.Api.Controllers
 {
@@ -34,7 +35,11 @@ namespace ControleFinanceiro.Api.Controllers
         [Authorize("Bearer")]
         public async Task<IActionResult> GetGastoAsync(string item, decimal valor, int gastoTipoId, string dataCompra, int pagina)
         {
-            var (result, qtdItens) = await _application.GetGastoAsync(item, valor, gastoTipoId, dataCompra, pagina);
+            DateTime? data = null;
+            if (!string.IsNullOrEmpty(dataCompra))
+                data = DateTime.Parse(dataCompra);
+
+            var (result, qtdItens) = await _application.GetGastoAsync(item, valor, gastoTipoId, data, pagina);
             return Ok(new { data = result, qtdItens });
         }
 
@@ -98,7 +103,11 @@ namespace ControleFinanceiro.Api.Controllers
         [Authorize("Bearer")]
         public async Task<IActionResult> ExportarArquivo(string item, decimal valor, int gastoTipoId, string dataCompra)
         {
-            var result = await _application.ExportarArquivo(item, valor, gastoTipoId, dataCompra);
+            DateTime? data = null;
+            if (!string.IsNullOrEmpty(dataCompra))
+                data = DateTime.Parse(dataCompra);
+
+            var result = await _application.ExportarArquivo(item, valor, gastoTipoId, data);
 
             return File(result, "application/text");
         }

@@ -12,9 +12,9 @@ namespace ControleFinanceiro.Domain.Interfaces.Service
     public interface IGastoService<TContext> : IServiceBase<TContext, Gasto, int>
                               where TContext : IUnitOfWork<TContext>
     {
-        Task<(List<GastoDto>, int)> GetGastoAsync(string item, decimal valor, int gastoTipoId, string dataCompra, int pagina);
+        Task<(List<GastoDto>, int)> GetGastoAsync(string item, decimal valor, int gastoTipoId, DateTime? dataCompra, int pagina);
         Task<Gasto> UpdateGastoAsync(int id, Gasto entity);
         Task DeleteGastoAsync(int id);
-        Task<byte[]> ExportarArquivo(string item, decimal valor, int gastoTipoId, string dataCompra);
+        Task<byte[]> ExportarArquivo(string item, decimal valor, int gastoTipoId, DateTime? dataCompra);
     }
 }

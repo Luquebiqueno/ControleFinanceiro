@@ -33,7 +33,7 @@ namespace ControleFinanceiro.Application.ServiceApplications
 
         #region [ Métodos ]
 
-        public async Task<(List<GastoDto>, int)> GetGastoAsync(string item, decimal valor, int gastoTipoId, string dataCompra, int pagina)
+        public async Task<(List<GastoDto>, int)> GetGastoAsync(string item, decimal valor, int gastoTipoId, DateTime? dataCompra, int pagina)
             => await _service.GetGastoAsync(item, valor, gastoTipoId, dataCompra, pagina);
         public async Task DeleteGastoAsync(int id)
         {
@@ -48,7 +48,7 @@ namespace ControleFinanceiro.Application.ServiceApplications
             return entity;
         }
 
-        public async Task<byte[]> ExportarArquivo(string item, decimal valor, int gastoTipoId, string dataCompra)
+        public async Task<byte[]> ExportarArquivo(string item, decimal valor, int gastoTipoId, DateTime? dataCompra)
             => await _service.ExportarArquivo(item, valor, gastoTipoId, dataCompra);
 
         #endregion

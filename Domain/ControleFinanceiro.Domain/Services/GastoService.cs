@@ -39,8 +39,8 @@ namespace ControleFinanceiro.Domain.Services
 
         public override IEnumerable<Gasto> GetAll()
             => base.GetAll().Where(x => x.Ativo && x.UsuarioCadastro.Equals(_usuarioLogado.Usuario.Id));
-        public async Task<(List<GastoDto>, int)> GetGastoAsync(string item, decimal valor, int gastoTipoId, string dataCompra, int pagina)
-            => await _repository.GetGastoAsync(_usuarioLogado.Usuario.Id, item, valor, gastoTipoId, dataCompra, pagina);
+        public async Task<(List<GastoDto>, int)> GetGastoAsync(string item, decimal valor, int gastoTipoId, DateTime? dataCompra, int pagina)
+            => await _repository.GetGastoAsync(_usuarioLogado.Usuario.Id, item, valor, gastoTipoId, dataCompra, pagina, false);
 
         public override async Task<Gasto> CreateAsync(Gasto entity)
         {
@@ -74,9 +74,9 @@ namespace ControleFinanceiro.Domain.Services
             base.Update(gasto);
         }
 
-        public async Task<byte[]> ExportarArquivo(string item, decimal valor, int gastoTipoId, string dataCompra)
+        public async Task<byte[]> ExportarArquivo(string item, decimal valor, int gastoTipoId, DateTime? dataCompra)
         {
-            var gastos = await _repository.ExportarArquivo(_usuarioLogado.Usuario.Id, item, valor, gastoTipoId, dataCompra);
+            var (gastos, qtd) = await _repository.GetGastoAsync(_usuarioLogado.Usuario.Id, item, valor, gastoTipoId, dataCompra, 0, true);
 
             StringBuilder file = new StringBuilder();
 
