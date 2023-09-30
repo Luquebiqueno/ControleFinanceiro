@@ -65,7 +65,7 @@
         </ng-container>
         <ng-container matColumnDef="valor">
             <th mat-header-cell *matHeaderCellDef> Valor </th>
-            <td mat-cell *matCellDef="let gasto"> {{gasto.valor | currency : 'R$ '}} </td>
+            <td mat-cell *matCellDef="let gasto"> {{gasto.valor | currency }} </td>
         </ng-container>
         <ng-container matColumnDef="dataCompra">
             <th mat-header-cell *matHeaderCellDef> Data da Compra </th>

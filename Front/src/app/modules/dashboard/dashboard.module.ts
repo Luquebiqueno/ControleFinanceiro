@@ -1,25 +1,22 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
+import { MaterialModule } from 'src/app/material/material.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { MatGridListModule } from '@angular/material/grid-list';
-import { MatCardModule } from '@angular/material/card';
-import { MatMenuModule } from '@angular/material/menu';
-import { MatIconModule } from '@angular/material/icon';
-import { MatButtonModule } from '@angular/material/button';
 
 
 
 @NgModule({
-  declarations: [
-    DashboardComponent
-  ],
-  imports: [
-    CommonModule,
-    MatGridListModule,
-    MatCardModule,
-    MatMenuModule,
-    MatIconModule,
-    MatButtonModule
-  ]
+    declarations: [
+        DashboardComponent
+    ],
+    imports: [
+        CommonModule,
+        RouterModule,
+        MaterialModule,
+        FormsModule,
+        ReactiveFormsModule
+    ]
 })
 export class DashboardModule { }

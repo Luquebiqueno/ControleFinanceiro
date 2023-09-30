@@ -10,10 +10,10 @@ import { MeuPerfilModule } from './modules/meu-perfil/meu-perfil.module';
 import { ExcluirMinhaContaModule } from './modules/excluir-minha-conta/excluir-minha-conta.module';
 import { AlterarSenhaModule } from './modules/alterar-senha/alterar-senha.module';
 import { DashboardModule } from './modules/dashboard/dashboard.module';
+import { GastoModule } from './modules/gasto/gasto.module';
 
 import { AppComponent } from './app.component';
 import { JwtInterceptor } from './_helpers/jwt.interceptor';
-import { GastoModule } from './modules/gasto/gasto.module';
 
 @NgModule({
     declarations: [

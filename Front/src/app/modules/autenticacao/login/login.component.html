@@ -21,9 +21,9 @@
                     <mat-form-field appearance="outline">
                         <mat-label>Senha</mat-label>
                         <input [type]="hide ? 'password' : 'text'" id="senha" formControlName="senha" matInput>
-                        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                        <!-- <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
                             <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-                        </button>
+                        </button> -->
                         <mat-error *ngIf="form.hasError('required', 'senha')">
                             Digite a senha por favor.
                         </mat-error>

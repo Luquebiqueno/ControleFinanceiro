@@ -10,6 +10,7 @@ using ControleFinanceiro.Domain.Interfaces.Repository;
 using ControleFinanceiro.Domain.Interfaces.Service;
 using ControleFinanceiro.Domain.Services;
 using ControleFinanceiro.Repository.Context;
+using ControleFinanceiro.Repository.Dapper;
 using ControleFinanceiro.Repository.Repositories;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
@@ -34,23 +35,27 @@ builder.Services.AddScoped<IUsuarioLogado, UsuarioLogado>();
 builder.Services.AddScoped<IUsuarioLogadoRepository, UsuarioLogadoRepository>();
 builder.Services.AddTransient<ITokenService, TokenService>();
 builder.Services.AddAutoMapper(typeof(Program));
+builder.Services.AddScoped<DbSession>();
 
 //Repository
 builder.Services.AddTransient(typeof(IRepositoryBase<,,>), typeof(RepositoryBase<,,>));
 builder.Services.AddScoped(typeof(IUsuarioRepository<>), typeof(UsuarioRepository<>));
 builder.Services.AddScoped(typeof(IGastoRepository<>), typeof(GastoRepository<>));
+builder.Services.AddScoped(typeof(IDashboardRepository<>), typeof(DashboardRepository<>));
 
 //Service
 builder.Services.AddTransient(typeof(IServiceBase<,,>), typeof(ServiceBase<,,>));
 builder.Services.AddScoped(typeof(IUsuarioService<>), typeof(UsuarioService<>));
 builder.Services.AddScoped(typeof(IAutenticacaoService<>), typeof(AutenticacaoService<>));
 builder.Services.AddScoped(typeof(IGastoService<>), typeof(GastoService<>));
+builder.Services.AddScoped(typeof(IDashboardService<>), typeof(DashboardService<>));
 
 //Application
 builder.Services.AddTransient(typeof(IApplicationBase<,,>), typeof(ApplicationBase<,,>));
 builder.Services.AddScoped(typeof(IUsuarioApplication<>), typeof(UsuarioApplication<>));
 builder.Services.AddScoped(typeof(IAutenticacaoApplication<>), typeof(AutenticacaoApplication<>));
 builder.Services.AddScoped(typeof(IGastoApplication<>), typeof(GastoApplication<>));
+builder.Services.AddScoped(typeof(IDashboardApplication<>), typeof(DashboardApplication<>));
 
 //Inicio Autenticação
 var tokenConfiguration = new TokenConfiguration();

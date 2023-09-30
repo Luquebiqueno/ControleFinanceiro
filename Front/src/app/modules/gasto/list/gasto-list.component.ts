@@ -39,7 +39,7 @@ export class GastoListComponent implements OnInit {
         let dataCompra = '';
 
         if (this.pesquisa.dataCompra !== undefined && this.pesquisa.dataCompra !== null && this.pesquisa.dataCompra !== '') {
-            dataCompra = formatDate(this.pesquisa.dataCompra, 'dd-MM-yyyy' ,this.locale);
+            dataCompra = formatDate(this.pesquisa.dataCompra, 'dd-MM-yyyy', this.locale);
         }
 
         this.gastoService.getGasto(this.pesquisa.item, this.pesquisa.valor, this.pesquisa.gastoTipoId, dataCompra, this.pagina).subscribe((response: any) => {

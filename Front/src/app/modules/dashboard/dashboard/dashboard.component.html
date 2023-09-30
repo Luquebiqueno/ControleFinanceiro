@@ -1,37 +1,70 @@
-<!-- <div class="grid-container">
-    <mat-card>
-        <mat-card-header>
-            <mat-card-title>Dashboard</mat-card-title>
-        </mat-card-header>
-        <mat-grid-list cols="2" rowHeight="350px">
-            <mat-grid-tile *ngFor="let card of cards | async" [colspan]="card.cols" [rowspan]="card.rows">
-                <mat-card class="dashboard-card">
-                    <mat-card-header>
-                        <mat-card-title>
-                            {{card.title}}
-                            <button mat-icon-button class="more-button" [matMenuTriggerFor]="menu"
-                                aria-label="Toggle menu">
-                                <mat-icon>more_vert</mat-icon>
-                            </button>
-                            <mat-menu #menu="matMenu" xPosition="before">
-                                <button mat-menu-item>Expand</button>
-                                <button mat-menu-item>Remove</button>
-                            </mat-menu>
-                        </mat-card-title>
-                    </mat-card-header>
-                    <mat-card-content class="dashboard-card-content">
-                        <div>Card Content Here</div>
-                    </mat-card-content>
-                </mat-card>
-            </mat-grid-tile>
-        </mat-grid-list>
-    </mat-card>
-</div> -->
 <mat-card>
     <mat-card-header>
-        <mat-card-title>Dashboard</mat-card-title>
+        <mat-card-title class="titulo">Dashboard</mat-card-title>
     </mat-card-header>
+    <form [formGroup]="form">
+        <mat-card-content>
+            <mat-grid-list cols="3" rowHeight='100px' gutterSize="15px">
+                <mat-grid-tile>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Data Inicial</mat-label>
+                        <input formControlName="dataInicial" id="dataInicial" matInput [matDatepicker]="pickerInicial">
+                        <mat-datepicker-toggle matSuffix [for]="pickerInicial"></mat-datepicker-toggle>
+                        <mat-datepicker #pickerInicial></mat-datepicker>
+                    </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Data Final</mat-label>
+                        <input formControlName="dataFinal" id="dataFinal" matInput [matDatepicker]="pickerFinal">
+                        <mat-datepicker-toggle matSuffix [for]="pickerFinal"></mat-datepicker-toggle>
+                        <mat-datepicker #pickerFinal></mat-datepicker>
+                    </mat-form-field>
+                </mat-grid-tile>
+            </mat-grid-list>
+            <div>
+                <button mat-raised-button color="primary" (click)="getDashboard()">
+                    <mat-icon>search</mat-icon> Pesquisar
+                </button>
+                <button mat-raised-button class="btn-limpar" (click)="limpar()">Limpar</button>
+            </div>
+        </mat-card-content>
+    </form>
+</mat-card>
+<mat-grid-list class="card-grafico" cols="3" rowHeight='150px' gutterSize="15px">
+    <mat-grid-tile>
+        <mat-card class="cards">
+            <div class="content-cads">
+                <div class="titulo">Total Gastos</div>
+                <div class="valor">
+                    <span>$</span><h1>{{totalGastos}}</h1>
+                </div>
+            </div>
+        </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile>
+        <mat-card class="cards">
+            <div class="content-cads">
+                <div class="titulo">Total Gastos Fixos</div>
+                <div class="valor">
+                    <span>$</span><h1>{{totalGastoFixo}}</h1>
+                </div>
+            </div>
+        </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile>
+        <mat-card class="cards">
+            <div class="content-cads">
+                <div class="titulo">Total Gastos Variáveis</div>
+                <div class="valor">
+                    <span>$</span><h1>{{totalGastoVariavel}}</h1>
+                </div>
+            </div>
+        </mat-card>
+    </mat-grid-tile>
+</mat-grid-list>
+<mat-card class="card-grafico">
     <mat-card-content class="dashboard-card-content">
-        <div id="chartbarSort" style="height: 450px;"></div>
+        <div id="chartdiv" style="height: 450px;"></div>
     </mat-card-content>
 </mat-card>
