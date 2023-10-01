@@ -34,7 +34,7 @@ namespace ControleFinanceiro.Domain.Services
 
         #endregion
 
-        #region [ Metodos ]
+        #region [ Métodos ]
 
         public async Task<IEnumerable<DashboardDto>> GetDashboard(DateTime dataInicial, DateTime dataFinal)
             => await _repository.GetDashboard(_usuarioLogado.Usuario.Id, dataInicial, dataFinal);

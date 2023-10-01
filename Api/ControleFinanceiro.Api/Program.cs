@@ -42,6 +42,7 @@ builder.Services.AddTransient(typeof(IRepositoryBase<,,>), typeof(RepositoryBase
 builder.Services.AddScoped(typeof(IUsuarioRepository<>), typeof(UsuarioRepository<>));
 builder.Services.AddScoped(typeof(IGastoRepository<>), typeof(GastoRepository<>));
 builder.Services.AddScoped(typeof(IDashboardRepository<>), typeof(DashboardRepository<>));
+builder.Services.AddScoped(typeof(ISistemaMenuRepository<>), typeof(SistemaMenuRepository<>));
 
 //Service
 builder.Services.AddTransient(typeof(IServiceBase<,,>), typeof(ServiceBase<,,>));
@@ -49,6 +50,7 @@ builder.Services.AddScoped(typeof(IUsuarioService<>), typeof(UsuarioService<>));
 builder.Services.AddScoped(typeof(IAutenticacaoService<>), typeof(AutenticacaoService<>));
 builder.Services.AddScoped(typeof(IGastoService<>), typeof(GastoService<>));
 builder.Services.AddScoped(typeof(IDashboardService<>), typeof(DashboardService<>));
+builder.Services.AddScoped(typeof(ISistemaMenuService<>), typeof(SistemaMenuService<>));
 
 //Application
 builder.Services.AddTransient(typeof(IApplicationBase<,,>), typeof(ApplicationBase<,,>));
@@ -56,6 +58,7 @@ builder.Services.AddScoped(typeof(IUsuarioApplication<>), typeof(UsuarioApplicat
 builder.Services.AddScoped(typeof(IAutenticacaoApplication<>), typeof(AutenticacaoApplication<>));
 builder.Services.AddScoped(typeof(IGastoApplication<>), typeof(GastoApplication<>));
 builder.Services.AddScoped(typeof(IDashboardApplication<>), typeof(DashboardApplication<>));
+builder.Services.AddScoped(typeof(ISistemaMenuApplication<>), typeof(SistemaMenuApplication<>));
 
 //Inicio Autenticação
 var tokenConfiguration = new TokenConfiguration();

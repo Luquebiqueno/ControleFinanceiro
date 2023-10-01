@@ -22,6 +22,7 @@ namespace ControleFinanceiro.Repository.Context
             modelBuilder.ApplyConfiguration(new UsuarioMap());
             modelBuilder.ApplyConfiguration(new GastoMap());
             modelBuilder.ApplyConfiguration(new GastoTipoMap());
+            modelBuilder.ApplyConfiguration(new SistemaMenuMap());
         }
     }
 }

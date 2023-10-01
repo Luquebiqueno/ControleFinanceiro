@@ -1,5 +1,21 @@
 ﻿Use ControleFinanceiro
 
+
+If Object_Id('SistemaMenu') Is Null 
+Begin
+	Create Table SistemaMenu 
+	(
+		 SistemaMenuId	Int Identity(1,1) Primary Key
+		,ParentId		Int					Null
+		,Descricao		Varchar(256)	Not Null
+		,Icone			Varchar(256)		Null
+		,RouterLink		Varchar(512)		Null
+		,Ordem			Int				Not Null
+		,Ativo			Bit				Not Null Default(1)
+	)
+End
+Go
+
 If Object_Id('Usuario') Is Null 
 Begin
 	Create Table Usuario 
