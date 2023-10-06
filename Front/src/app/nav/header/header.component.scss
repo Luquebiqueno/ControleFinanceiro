@@ -1,27 +1,18 @@
 mat-list {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-
     mat-list-item {
         a {
-            display: flex;
-            align-items: center;
             text-decoration: none;
-            position: relative;
-            .link-name {
-                font-size: 14px;
-                font-weight: 400;
-                color: #707070;
-            }
+            font-size: 12px;
+            color: #707070;
         }
-
         a:hover {
-            .link-name {
-                color: #0e4bf1;
-            }
+            color: #0e4bf1;
         }
     }
+}
+
+.mdc-list-item.mdc-list-item--with-one-line {
+    height: 30px;
 }
 
 .button-sair-content {
