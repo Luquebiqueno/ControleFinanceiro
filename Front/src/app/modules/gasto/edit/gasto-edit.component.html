@@ -41,7 +41,7 @@
                             <mat-option [value]="1">Gasto Fixo</mat-option>
                             <mat-option [value]="2">Gasto Variável</mat-option>
                         </mat-select>
-                        <mat-error *ngIf="gastoForm.hasError('required', 'dataCompra')">
+                        <mat-error *ngIf="gastoForm.hasError('required', 'gastoTipoId')">
                             Selecione o tipo de gasto por favor.
                         </mat-error>
                     </mat-form-field>

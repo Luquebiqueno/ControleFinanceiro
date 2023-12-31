@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Gasto } from 'src/app/models/gasto';
@@ -10,7 +10,7 @@ import { NotifierService } from 'src/app/services/notifier.service';
     templateUrl: './gasto-edit.component.html',
     styleUrls: ['./gasto-edit.component.scss']
 })
-export class GastoEditComponent {
+export class GastoEditComponent implements OnInit {
 
     gastoForm: FormGroup;
     gasto: Gasto;
@@ -26,7 +26,7 @@ export class GastoEditComponent {
     ngOnInit(): void {
         this.getForm();
         this.id = this.route.snapshot.paramMap.get('id');
-        if (this.id != null || this.id != undefined) {
+        if (this.id != null && this.id != undefined) {
             this.titulo = 'Editar Gasto';
             this.getGastoById(this.id);
         }
@@ -56,7 +56,7 @@ export class GastoEditComponent {
     }
 
     salvar() {
-        if (this.id != null || this.id != undefined) {
+        if (this.id != null && this.id != undefined) {
             this.updateGasto(this.id);
         } else {
             this.createGasto();
